@@ -1,0 +1,1995 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.prFile version="1">
+    <org.eventb.core.prProof name="assignPackage/inv13/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9" org.eventb.core.prSets="PACKAGE,USER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(package_status,{pending},{allocated},{in_progress},{delivered}))" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p10" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p11,p12,p13,p14,p15,p16,p17"/>
+                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p11,p12,p13,p14,p15,p16,p17"/>
+                <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(SYS_ADMIN,{sys_admin}))" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p18" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p19"/>
+                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p19"/>
+                        <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'">
+                                <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p20"/>
+                                <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p21"/>
+                                <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p22"/>
+                                <org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p23"/>
+                                <org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p24"/>
+                                <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'">
+                                        <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p25,p26,p27,p28,p9,p3,p5,p6,p8"/>
+                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Z3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9">
+                                            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                                            <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="driver" org.eventb.core.type="USER"/>
+        <org.eventb.core.prIdent name="drivers" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prIdent name="drivers_size_limit" org.eventb.core.type="ℙ(USER×ℤ)"/>
+        <org.eventb.core.prIdent name="package" org.eventb.core.type="PACKAGE"/>
+        <org.eventb.core.prIdent name="packages" org.eventb.core.type="ℙ(PACKAGE)"/>
+        <org.eventb.core.prIdent name="packages_size_limit" org.eventb.core.type="ℙ(PACKAGE×ℤ)"/>
+        <org.eventb.core.prPred name="p26" org.eventb.core.predicate="packages_drivers∈packages ⇸ drivers">
+            <org.eventb.core.prIdent name="packages_drivers" org.eventb.core.type="ℙ(PACKAGE×USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="drivers_size_limit{driver ↦ drivers_size_limit(driver) − packages_size_limit(package)}∈drivers → ℕ"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="driver∈drivers"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="packages_size_limit∈PACKAGE ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="driver∈dom(drivers_size_limit)"/>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="¬allocated=delivered">
+            <org.eventb.core.prIdent name="allocated" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="¬pending=in_progress">
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p20" org.eventb.core.predicate="admins⊆USER">
+            <org.eventb.core.prIdent name="admins" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="¬pending=delivered">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="¬allocated=in_progress">
+            <org.eventb.core.prIdent name="allocated" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p17" org.eventb.core.predicate="¬in_progress=delivered">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="drivers_size_limit∈drivers → ℕ"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="package∈packages"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="partition(package_status,{pending},{allocated},{in_progress},{delivered})">
+            <org.eventb.core.prIdent name="allocated" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p19" org.eventb.core.predicate="SYS_ADMIN={sys_admin}">
+            <org.eventb.core.prIdent name="SYS_ADMIN" org.eventb.core.type="ℙ(SYS_ADMIN)"/>
+            <org.eventb.core.prIdent name="sys_admin" org.eventb.core.type="SYS_ADMIN"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p27" org.eventb.core.predicate="packages_own_status∈packages → package_status">
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="packages_own_status" org.eventb.core.type="ℙ(PACKAGE×package_status)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="packages_size_limit(package)≤drivers_size_limit(driver)"/>
+        <org.eventb.core.prPred name="p24" org.eventb.core.predicate="messages⊆MESSAGE">
+            <org.eventb.core.prIdent name="MESSAGE" org.eventb.core.type="ℙ(MESSAGE)"/>
+            <org.eventb.core.prIdent name="messages" org.eventb.core.type="ℙ(MESSAGE)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="drivers_size_limit∈USER ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p21" org.eventb.core.predicate="drivers⊆USER"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="packages_size_limit∈packages → ℕ1"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="package_status={pending,allocated,in_progress,delivered}">
+            <org.eventb.core.prIdent name="allocated" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p22" org.eventb.core.predicate="vendors⊆USER">
+            <org.eventb.core.prIdent name="vendors" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p18" org.eventb.core.predicate="partition(SYS_ADMIN,{sys_admin})">
+            <org.eventb.core.prIdent name="SYS_ADMIN" org.eventb.core.type="ℙ(SYS_ADMIN)"/>
+            <org.eventb.core.prIdent name="sys_admin" org.eventb.core.type="SYS_ADMIN"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="package∈dom(packages_size_limit)"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬pending=allocated">
+            <org.eventb.core.prIdent name="allocated" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p23" org.eventb.core.predicate="packages⊆PACKAGE"/>
+        <org.eventb.core.prPred name="p25" org.eventb.core.predicate="packages_vendors∈packages → vendors">
+            <org.eventb.core.prIdent name="packages_vendors" org.eventb.core.type="ℙ(PACKAGE×USER)"/>
+            <org.eventb.core.prIdent name="vendors" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p28" org.eventb.core.predicate="messages_sent∈messages → packages">
+            <org.eventb.core.prIdent name="MESSAGE" org.eventb.core.type="ℙ(MESSAGE)"/>
+            <org.eventb.core.prIdent name="messages" org.eventb.core.type="ℙ(MESSAGE)"/>
+            <org.eventb.core.prIdent name="messages_sent" org.eventb.core.type="ℙ(MESSAGE×PACKAGE)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="assignPackage/act5/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4" org.eventb.core.prSets="PACKAGE,USER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(package_status,{pending},{in_progress},{delivered}))" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p5" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p6,p7,p8,p9"/>
+                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p6,p7,p8,p9"/>
+                <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(SYS_ADMIN,{sys_admin}))" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p10" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p11"/>
+                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p11"/>
+                        <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'">
+                                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p12" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p13"/>
+                                <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'">
+                                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p14"/>
+                                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p15"/>
+                                        <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p16"/>
+                                        <org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p17"/>
+                                        <org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p18"/>
+                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p19">
+                                                <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p19" org.eventb.core.prHyps="p1">
+                                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p3">
+                                                        <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p3" org.eventb.core.prHyps="p3"/>
+                                                    </org.eventb.core.prAnte>
+                                                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+                                                    <org.eventb.core.prExprRef name=".subst" org.eventb.core.prRef="e0"/>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                            <org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p20">
+                                                <org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p20" org.eventb.core.prHyps="p1"/>
+                                            </org.eventb.core.prAnte>
+                                            <org.eventb.core.prAnte name=")" org.eventb.core.prGoal="p21">
+                                                <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p21" org.eventb.core.prHyps="p4">
+                                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p2">
+                                                        <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p2" org.eventb.core.prHyps="p2"/>
+                                                    </org.eventb.core.prAnte>
+                                                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+                                                    <org.eventb.core.prExprRef name=".subst" org.eventb.core.prRef="e1"/>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                            <org.eventb.core.prAnte name="*" org.eventb.core.prGoal="p22">
+                                                <org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p22" org.eventb.core.prHyps="p4"/>
+                                            </org.eventb.core.prAnte>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="driver" org.eventb.core.type="USER"/>
+        <org.eventb.core.prIdent name="drivers" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prIdent name="drivers_size_limit" org.eventb.core.type="ℙ(USER×ℤ)"/>
+        <org.eventb.core.prIdent name="package" org.eventb.core.type="PACKAGE"/>
+        <org.eventb.core.prIdent name="packages" org.eventb.core.type="ℙ(PACKAGE)"/>
+        <org.eventb.core.prIdent name="packages_size_limit" org.eventb.core.type="ℙ(PACKAGE×ℤ)"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="driver∈drivers"/>
+        <org.eventb.core.prPred name="p18" org.eventb.core.predicate="messages⊆MESSAGE">
+            <org.eventb.core.prIdent name="MESSAGE" org.eventb.core.type="ℙ(MESSAGE)"/>
+            <org.eventb.core.prIdent name="messages" org.eventb.core.type="ℙ(MESSAGE)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p19" org.eventb.core.predicate="driver∈dom(drivers_size_limit)"/>
+        <org.eventb.core.prPred name="p22" org.eventb.core.predicate="packages_size_limit∈PACKAGE ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="drivers⊆USER"/>
+        <org.eventb.core.prPred name="p20" org.eventb.core.predicate="drivers_size_limit∈USER ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="packages_size_limit∈packages → ℕ1"/>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="vendors⊆USER">
+            <org.eventb.core.prIdent name="vendors" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="driver∈dom(drivers_size_limit)∧drivers_size_limit∈USER ⇸ ℤ∧package∈dom(packages_size_limit)∧packages_size_limit∈PACKAGE ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="¬pending=in_progress">
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="admins⊆USER">
+            <org.eventb.core.prIdent name="admins" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬pending=delivered">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="¬in_progress=delivered">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="package_status={pending,in_progress,delivered}">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="drivers_size_limit∈drivers → ℕ"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="package∈packages"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="partition(SYS_ADMIN,{sys_admin})">
+            <org.eventb.core.prIdent name="SYS_ADMIN" org.eventb.core.type="ℙ(SYS_ADMIN)"/>
+            <org.eventb.core.prIdent name="sys_admin" org.eventb.core.type="SYS_ADMIN"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="SYS_ADMIN={sys_admin}">
+            <org.eventb.core.prIdent name="SYS_ADMIN" org.eventb.core.type="ℙ(SYS_ADMIN)"/>
+            <org.eventb.core.prIdent name="sys_admin" org.eventb.core.type="SYS_ADMIN"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="{package} ◁ packages_own_status=(∅ ⦂ ℙ(PACKAGE×package_status))">
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="packages_own_status" org.eventb.core.type="ℙ(PACKAGE×package_status)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p21" org.eventb.core.predicate="package∈dom(packages_size_limit)"/>
+        <org.eventb.core.prPred name="p17" org.eventb.core.predicate="packages⊆PACKAGE"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="partition(package_status,{pending},{in_progress},{delivered})">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="¬package∈dom(packages_own_status)">
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="packages_own_status" org.eventb.core.type="ℙ(PACKAGE×package_status)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prExpr name="e0" org.eventb.core.expression="drivers"/>
+        <org.eventb.core.prExpr name="e1" org.eventb.core.expression="packages"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.isFunGoal"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.totalDom:2"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="INITIALISATION/inv12/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="PACKAGE">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(package_status,{pending},{allocated},{in_progress},{delivered}))" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p1" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p2,p3,p4,p5,p6,p7,p8"/>
+                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p2,p3,p4,p5,p6,p7,p8"/>
+                <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(SYS_ADMIN,{sys_admin}))" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p9" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p10"/>
+                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p10"/>
+                        <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p11">
+                                <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p11" org.eventb.core.prHyps=""/>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(package_status,{pending},{allocated},{in_progress},{delivered})">
+            <org.eventb.core.prIdent name="allocated" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="partition(SYS_ADMIN,{sys_admin})">
+            <org.eventb.core.prIdent name="SYS_ADMIN" org.eventb.core.type="ℙ(SYS_ADMIN)"/>
+            <org.eventb.core.prIdent name="sys_admin" org.eventb.core.type="SYS_ADMIN"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="SYS_ADMIN={sys_admin}">
+            <org.eventb.core.prIdent name="SYS_ADMIN" org.eventb.core.type="ℙ(SYS_ADMIN)"/>
+            <org.eventb.core.prIdent name="sys_admin" org.eventb.core.type="SYS_ADMIN"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="⊤"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬pending=allocated">
+            <org.eventb.core.prIdent name="allocated" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(∅ ⦂ ℙ(PACKAGE×ℤ))∈(∅ ⦂ ℙ(PACKAGE)) → ℕ1"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="package_status={pending,allocated,in_progress,delivered}">
+            <org.eventb.core.prIdent name="allocated" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="¬allocated=delivered">
+            <org.eventb.core.prIdent name="allocated" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬pending=in_progress">
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="¬pending=delivered">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="¬allocated=in_progress">
+            <org.eventb.core.prIdent name="allocated" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬in_progress=delivered">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="INITIALISATION/inv13/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="" org.eventb.core.prSets="USER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(package_status,{pending},{in_progress},{delivered}))" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p1" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p2,p3,p4,p5"/>
+                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p2,p3,p4,p5"/>
+                <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(SYS_ADMIN,{sys_admin}))" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p6" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p7"/>
+                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p7"/>
+                        <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p8">
+                                <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p8" org.eventb.core.prHyps=""/>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="partition(SYS_ADMIN,{sys_admin})">
+            <org.eventb.core.prIdent name="SYS_ADMIN" org.eventb.core.type="ℙ(SYS_ADMIN)"/>
+            <org.eventb.core.prIdent name="sys_admin" org.eventb.core.type="SYS_ADMIN"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="SYS_ADMIN={sys_admin}">
+            <org.eventb.core.prIdent name="SYS_ADMIN" org.eventb.core.type="ℙ(SYS_ADMIN)"/>
+            <org.eventb.core.prIdent name="sys_admin" org.eventb.core.type="SYS_ADMIN"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="⊤"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="partition(package_status,{pending},{in_progress},{delivered})">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="(∅ ⦂ ℙ(USER×ℤ))∈(∅ ⦂ ℙ(USER)) → ℕ"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬pending=in_progress">
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬pending=delivered">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="¬in_progress=delivered">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="package_status={pending,in_progress,delivered}">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="addPackage/inv12/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="PACKAGE">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(package_status,{pending},{allocated},{in_progress},{delivered}))" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p3" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p4,p5,p6,p7,p8,p9,p10"/>
+                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p4,p5,p6,p7,p8,p9,p10"/>
+                <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(SYS_ADMIN,{sys_admin}))" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p11" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p12"/>
+                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p12"/>
+                        <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'">
+                                <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p13"/>
+                                <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p14"/>
+                                <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p15"/>
+                                <org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p16"/>
+                                <org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p17"/>
+                                <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'">
+                                        <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p18,p19,p20,p21,p22,p23"/>
+                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="CVC4" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2">
+                                            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                                            <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="CVC4"/>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="p_size" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.prIdent name="package" org.eventb.core.type="PACKAGE"/>
+        <org.eventb.core.prIdent name="packages" org.eventb.core.type="ℙ(PACKAGE)"/>
+        <org.eventb.core.prIdent name="packages_size_limit" org.eventb.core.type="ℙ(PACKAGE×ℤ)"/>
+        <org.eventb.core.prPred name="p20" org.eventb.core.predicate="packages_drivers∈packages ⇸ drivers">
+            <org.eventb.core.prIdent name="USER" org.eventb.core.type="ℙ(USER)"/>
+            <org.eventb.core.prIdent name="drivers" org.eventb.core.type="ℙ(USER)"/>
+            <org.eventb.core.prIdent name="packages_drivers" org.eventb.core.type="ℙ(PACKAGE×USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p17" org.eventb.core.predicate="messages⊆MESSAGE">
+            <org.eventb.core.prIdent name="MESSAGE" org.eventb.core.type="ℙ(MESSAGE)"/>
+            <org.eventb.core.prIdent name="messages" org.eventb.core.type="ℙ(MESSAGE)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="drivers⊆USER">
+            <org.eventb.core.prIdent name="USER" org.eventb.core.type="ℙ(USER)"/>
+            <org.eventb.core.prIdent name="drivers" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="packages_size_limit∈packages → ℕ1"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="package_status={pending,allocated,in_progress,delivered}">
+            <org.eventb.core.prIdent name="allocated" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="¬allocated=delivered">
+            <org.eventb.core.prIdent name="allocated" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="vendors⊆USER">
+            <org.eventb.core.prIdent name="USER" org.eventb.core.type="ℙ(USER)"/>
+            <org.eventb.core.prIdent name="vendors" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p18" org.eventb.core.predicate="vehicle_capacity=10">
+            <org.eventb.core.prIdent name="vehicle_capacity" org.eventb.core.type="ℤ"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="¬pending=in_progress">
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="admins⊆USER">
+            <org.eventb.core.prIdent name="USER" org.eventb.core.type="ℙ(USER)"/>
+            <org.eventb.core.prIdent name="admins" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="p_size∈ℕ1"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="¬pending=delivered">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬allocated=in_progress">
+            <org.eventb.core.prIdent name="allocated" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="¬in_progress=delivered">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="partition(package_status,{pending},{allocated},{in_progress},{delivered})">
+            <org.eventb.core.prIdent name="allocated" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="partition(SYS_ADMIN,{sys_admin})">
+            <org.eventb.core.prIdent name="SYS_ADMIN" org.eventb.core.type="ℙ(SYS_ADMIN)"/>
+            <org.eventb.core.prIdent name="sys_admin" org.eventb.core.type="SYS_ADMIN"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="SYS_ADMIN={sys_admin}">
+            <org.eventb.core.prIdent name="SYS_ADMIN" org.eventb.core.type="ℙ(SYS_ADMIN)"/>
+            <org.eventb.core.prIdent name="sys_admin" org.eventb.core.type="SYS_ADMIN"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p23" org.eventb.core.predicate="drivers_size_limit∈drivers → ℕ1">
+            <org.eventb.core.prIdent name="USER" org.eventb.core.type="ℙ(USER)"/>
+            <org.eventb.core.prIdent name="drivers" org.eventb.core.type="ℙ(USER)"/>
+            <org.eventb.core.prIdent name="drivers_size_limit" org.eventb.core.type="ℙ(USER×ℤ)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="packages_size_limit{package ↦ p_size}∈packages∪{package} → ℕ1"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="¬pending=allocated">
+            <org.eventb.core.prIdent name="allocated" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="packages⊆PACKAGE"/>
+        <org.eventb.core.prPred name="p19" org.eventb.core.predicate="packages_vendors∈packages → vendors">
+            <org.eventb.core.prIdent name="USER" org.eventb.core.type="ℙ(USER)"/>
+            <org.eventb.core.prIdent name="packages_vendors" org.eventb.core.type="ℙ(PACKAGE×USER)"/>
+            <org.eventb.core.prIdent name="vendors" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p22" org.eventb.core.predicate="messages_sent∈messages → packages">
+            <org.eventb.core.prIdent name="MESSAGE" org.eventb.core.type="ℙ(MESSAGE)"/>
+            <org.eventb.core.prIdent name="messages" org.eventb.core.type="ℙ(MESSAGE)"/>
+            <org.eventb.core.prIdent name="messages_sent" org.eventb.core.type="ℙ(MESSAGE×PACKAGE)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p21" org.eventb.core.predicate="packages_own_status∈packages → package_status">
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="packages_own_status" org.eventb.core.type="ℙ(PACKAGE×package_status)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="addDriver/inv13/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="USER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(package_status,{pending},{in_progress},{delivered}))" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p3" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p4,p5,p6,p7"/>
+                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p4,p5,p6,p7"/>
+                <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(SYS_ADMIN,{sys_admin}))" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p8" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p9"/>
+                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p9"/>
+                        <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'">
+                                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p10" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p11"/>
+                                <org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p12" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p13"/>
+                                <org.eventb.core.prHypAction name="REWRITE2" org.eventb.core.prHidden="p14" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p15"/>
+                                <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'">
+                                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p16"/>
+                                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p17"/>
+                                        <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p18"/>
+                                        <org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p19"/>
+                                        <org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p20"/>
+                                        <org.eventb.core.prHypAction name="HIDE5" org.eventb.core.prHyps="p21"/>
+                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+                                            <org.eventb.core.prAnte name="'">
+                                                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p22,p23,p24"/>
+                                                <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="CVC4" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2">
+                                                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                                                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="CVC4"/>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="d_size" org.eventb.core.type="ℤ"/>
+        <org.eventb.core.prIdent name="driver" org.eventb.core.type="USER"/>
+        <org.eventb.core.prIdent name="drivers" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prIdent name="drivers_size_limit" org.eventb.core.type="ℙ(USER×ℤ)"/>
+        <org.eventb.core.prPred name="p23" org.eventb.core.predicate="packages_drivers∈packages ⇸ drivers">
+            <org.eventb.core.prIdent name="PACKAGE" org.eventb.core.type="ℙ(PACKAGE)"/>
+            <org.eventb.core.prIdent name="packages" org.eventb.core.type="ℙ(PACKAGE)"/>
+            <org.eventb.core.prIdent name="packages_drivers" org.eventb.core.type="ℙ(PACKAGE×USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="driver∉drivers"/>
+        <org.eventb.core.prPred name="p24" org.eventb.core.predicate="packages_own_status∈packages ⇸ package_status">
+            <org.eventb.core.prIdent name="PACKAGE" org.eventb.core.type="ℙ(PACKAGE)"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="packages" org.eventb.core.type="ℙ(PACKAGE)"/>
+            <org.eventb.core.prIdent name="packages_own_status" org.eventb.core.type="ℙ(PACKAGE×package_status)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="¬pending=in_progress">
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="admins⊆USER">
+            <org.eventb.core.prIdent name="admins" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="¬pending=delivered">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="drivers_size_limit{driver ↦ d_size}∈drivers∪{driver} → ℕ"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="¬in_progress=delivered">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="¬driver∈admins">
+            <org.eventb.core.prIdent name="admins" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="drivers_size_limit∈drivers → ℕ"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="SYS_ADMIN={sys_admin}">
+            <org.eventb.core.prIdent name="SYS_ADMIN" org.eventb.core.type="ℙ(SYS_ADMIN)"/>
+            <org.eventb.core.prIdent name="sys_admin" org.eventb.core.type="SYS_ADMIN"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="¬driver∈drivers"/>
+        <org.eventb.core.prPred name="p20" org.eventb.core.predicate="messages⊆MESSAGE">
+            <org.eventb.core.prIdent name="MESSAGE" org.eventb.core.type="ℙ(MESSAGE)"/>
+            <org.eventb.core.prIdent name="messages" org.eventb.core.type="ℙ(MESSAGE)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="¬driver∈vendors">
+            <org.eventb.core.prIdent name="vendors" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p17" org.eventb.core.predicate="drivers⊆USER"/>
+        <org.eventb.core.prPred name="p18" org.eventb.core.predicate="vendors⊆USER">
+            <org.eventb.core.prIdent name="vendors" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="d_size∈{4,8,18,26,32,38,40,41,44}"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="package_status={pending,in_progress,delivered}">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="driver∉vendors">
+            <org.eventb.core.prIdent name="vendors" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="partition(SYS_ADMIN,{sys_admin})">
+            <org.eventb.core.prIdent name="SYS_ADMIN" org.eventb.core.type="ℙ(SYS_ADMIN)"/>
+            <org.eventb.core.prIdent name="sys_admin" org.eventb.core.type="SYS_ADMIN"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p19" org.eventb.core.predicate="packages⊆PACKAGE">
+            <org.eventb.core.prIdent name="PACKAGE" org.eventb.core.type="ℙ(PACKAGE)"/>
+            <org.eventb.core.prIdent name="packages" org.eventb.core.type="ℙ(PACKAGE)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p22" org.eventb.core.predicate="packages_vendors∈packages → vendors">
+            <org.eventb.core.prIdent name="PACKAGE" org.eventb.core.type="ℙ(PACKAGE)"/>
+            <org.eventb.core.prIdent name="packages" org.eventb.core.type="ℙ(PACKAGE)"/>
+            <org.eventb.core.prIdent name="packages_vendors" org.eventb.core.type="ℙ(PACKAGE×USER)"/>
+            <org.eventb.core.prIdent name="vendors" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="partition(package_status,{pending},{in_progress},{delivered})">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="driver∉admins">
+            <org.eventb.core.prIdent name="admins" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p21" org.eventb.core.predicate="driver∈USER"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="assignPackage/grd6/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4" org.eventb.core.prSets="PACKAGE,USER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(package_status,{pending},{allocated},{in_progress},{delivered}))" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p5" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p6,p7,p8,p9,p10,p11,p12"/>
+                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p6,p7,p8,p9,p10,p11,p12"/>
+                <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(SYS_ADMIN,{sys_admin}))" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p13" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p14"/>
+                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p14"/>
+                        <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'">
+                                <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p15"/>
+                                <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p16"/>
+                                <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p17"/>
+                                <org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p18"/>
+                                <org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p19"/>
+                                <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p20">
+                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p20" org.eventb.core.prHyps="p4">
+                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p2">
+                                                <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p2" org.eventb.core.prHyps="p2"/>
+                                            </org.eventb.core.prAnte>
+                                            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+                                            <org.eventb.core.prExprRef name=".subst" org.eventb.core.prRef="e0"/>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                    <org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p21">
+                                        <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p21" org.eventb.core.prHyps="p4"/>
+                                    </org.eventb.core.prAnte>
+                                    <org.eventb.core.prAnte name=")" org.eventb.core.prGoal="p22">
+                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p22" org.eventb.core.prHyps="p1">
+                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p3">
+                                                <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p3" org.eventb.core.prHyps="p3"/>
+                                            </org.eventb.core.prAnte>
+                                            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+                                            <org.eventb.core.prExprRef name=".subst" org.eventb.core.prRef="e1"/>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                    <org.eventb.core.prAnte name="*" org.eventb.core.prGoal="p23">
+                                        <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p23" org.eventb.core.prHyps="p1"/>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="driver" org.eventb.core.type="USER"/>
+        <org.eventb.core.prIdent name="drivers" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prIdent name="drivers_size_limit" org.eventb.core.type="ℙ(USER×ℤ)"/>
+        <org.eventb.core.prIdent name="package" org.eventb.core.type="PACKAGE"/>
+        <org.eventb.core.prIdent name="packages" org.eventb.core.type="ℙ(PACKAGE)"/>
+        <org.eventb.core.prIdent name="packages_size_limit" org.eventb.core.type="ℙ(PACKAGE×ℤ)"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="driver∈drivers"/>
+        <org.eventb.core.prPred name="p19" org.eventb.core.predicate="messages⊆MESSAGE">
+            <org.eventb.core.prIdent name="MESSAGE" org.eventb.core.type="ℙ(MESSAGE)"/>
+            <org.eventb.core.prIdent name="messages" org.eventb.core.type="ℙ(MESSAGE)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p21" org.eventb.core.predicate="packages_size_limit∈PACKAGE ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p22" org.eventb.core.predicate="driver∈dom(drivers_size_limit)"/>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="drivers⊆USER"/>
+        <org.eventb.core.prPred name="p23" org.eventb.core.predicate="drivers_size_limit∈USER ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="packages_size_limit∈packages → ℕ1"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="package_status={pending,allocated,in_progress,delivered}">
+            <org.eventb.core.prIdent name="allocated" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="¬allocated=delivered">
+            <org.eventb.core.prIdent name="allocated" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p17" org.eventb.core.predicate="vendors⊆USER">
+            <org.eventb.core.prIdent name="vendors" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬pending=in_progress">
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="admins⊆USER">
+            <org.eventb.core.prIdent name="admins" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="¬pending=delivered">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="¬allocated=in_progress">
+            <org.eventb.core.prIdent name="allocated" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬in_progress=delivered">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="drivers_size_limit∈drivers → ℕ"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="package∈packages"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="partition(package_status,{pending},{allocated},{in_progress},{delivered})">
+            <org.eventb.core.prIdent name="allocated" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="partition(SYS_ADMIN,{sys_admin})">
+            <org.eventb.core.prIdent name="SYS_ADMIN" org.eventb.core.type="ℙ(SYS_ADMIN)"/>
+            <org.eventb.core.prIdent name="sys_admin" org.eventb.core.type="SYS_ADMIN"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="SYS_ADMIN={sys_admin}">
+            <org.eventb.core.prIdent name="SYS_ADMIN" org.eventb.core.type="ℙ(SYS_ADMIN)"/>
+            <org.eventb.core.prIdent name="sys_admin" org.eventb.core.type="SYS_ADMIN"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p20" org.eventb.core.predicate="package∈dom(packages_size_limit)"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="¬pending=allocated">
+            <org.eventb.core.prIdent name="allocated" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p18" org.eventb.core.predicate="packages⊆PACKAGE"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="package∈dom(packages_size_limit)∧packages_size_limit∈PACKAGE ⇸ ℤ∧driver∈dom(drivers_size_limit)∧drivers_size_limit∈USER ⇸ ℤ"/>
+        <org.eventb.core.prExpr name="e1" org.eventb.core.expression="drivers"/>
+        <org.eventb.core.prExpr name="e0" org.eventb.core.expression="packages"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.isFunGoal"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.totalDom:2"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="cancelPendingPackage/inv12/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14" org.eventb.core.prSets="MESSAGE,PACKAGE,SYS_ADMIN,USER,package_status">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(package_status,{pending},{in_progress},{delivered}))" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p13" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p15,p16,p17,p18"/>
+                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p15,p16,p17,p18"/>
+                <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(SYS_ADMIN,{sys_admin}))" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p10" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p19"/>
+                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p19"/>
+                        <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'">
+                                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p7" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p20"/>
+                                <org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p3" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p21"/>
+                                <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'">
+                                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p22"/>
+                                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p23"/>
+                                        <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p24"/>
+                                        <org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p25"/>
+                                        <org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p26"/>
+                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="he with packages_own_status(package)=pending" org.eventb.core.prHyps="p14">
+                                            <org.eventb.core.prAnte name="'">
+                                                <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p15" org.eventb.core.prInfHyps="p27"/>
+                                                <org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p16" org.eventb.core.prInfHyps="p28"/>
+                                                <org.eventb.core.prHypAction name="FORWARD_INF2" org.eventb.core.prHyps="p17" org.eventb.core.prInfHyps="p29"/>
+                                                <org.eventb.core.prHypAction name="DESELECT3" org.eventb.core.prHyps="p15,p16,p17"/>
+                                                <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+                                                    <org.eventb.core.prAnte name="'">
+                                                        <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p11,p1,p4,p12,p8,p2,p15,p16,p17"/>
+                                                        <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="CVC3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p5,p6,p9,p14,p18,p19,p20,p21,p27,p28,p29,p11,p1,p4,p12,p8,p2,p15,p16,p17">
+                                                            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                                                            <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="CVC3"/>
+                                                        </org.eventb.core.prRule>
+                                                    </org.eventb.core.prAnte>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="admins" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+        <org.eventb.core.prIdent name="drivers" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prIdent name="drivers_size_limit" org.eventb.core.type="ℙ(USER×ℤ)"/>
+        <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+        <org.eventb.core.prIdent name="messages" org.eventb.core.type="ℙ(MESSAGE)"/>
+        <org.eventb.core.prIdent name="messages_sent" org.eventb.core.type="ℙ(MESSAGE×PACKAGE)"/>
+        <org.eventb.core.prIdent name="package" org.eventb.core.type="PACKAGE"/>
+        <org.eventb.core.prIdent name="packages" org.eventb.core.type="ℙ(PACKAGE)"/>
+        <org.eventb.core.prIdent name="packages_drivers" org.eventb.core.type="ℙ(PACKAGE×USER)"/>
+        <org.eventb.core.prIdent name="packages_own_status" org.eventb.core.type="ℙ(PACKAGE×package_status)"/>
+        <org.eventb.core.prIdent name="packages_size_limit" org.eventb.core.type="ℙ(PACKAGE×ℤ)"/>
+        <org.eventb.core.prIdent name="packages_vendors" org.eventb.core.type="ℙ(PACKAGE×USER)"/>
+        <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        <org.eventb.core.prIdent name="sys_admin" org.eventb.core.type="SYS_ADMIN"/>
+        <org.eventb.core.prIdent name="user" org.eventb.core.type="USER"/>
+        <org.eventb.core.prIdent name="vendors" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="packages_drivers∈packages ⇸ drivers"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="messages_sent ▷ {package}=(∅ ⦂ ℙ(MESSAGE×PACKAGE))"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="packages_own_status∈packages ⇸ package_status"/>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="¬pending=in_progress"/>
+        <org.eventb.core.prPred name="p22" org.eventb.core.predicate="admins⊆USER"/>
+        <org.eventb.core.prPred name="p17" org.eventb.core.predicate="¬pending=delivered"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="user∈admins"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="{package} ◁ packages_own_status≠(∅ ⦂ ℙ(PACKAGE×package_status))"/>
+        <org.eventb.core.prPred name="p18" org.eventb.core.predicate="¬in_progress=delivered"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="drivers_size_limit∈drivers → ℕ"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="package∈packages"/>
+        <org.eventb.core.prPred name="p19" org.eventb.core.predicate="SYS_ADMIN={sys_admin}"/>
+        <org.eventb.core.prPred name="p27" org.eventb.core.predicate="package_status={packages_own_status(package),in_progress,delivered}"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="{package} ⩤ packages_size_limit∈packages ∖ {package} → ℕ1"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="packages_own_status∈PACKAGE ⇸ package_status"/>
+        <org.eventb.core.prPred name="p26" org.eventb.core.predicate="messages⊆MESSAGE"/>
+        <org.eventb.core.prPred name="p21" org.eventb.core.predicate="¬package∈ran(messages_sent)"/>
+        <org.eventb.core.prPred name="p20" org.eventb.core.predicate="package∈dom(packages_own_status)"/>
+        <org.eventb.core.prPred name="p23" org.eventb.core.predicate="drivers⊆USER"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="packages_size_limit∈packages → ℕ1"/>
+        <org.eventb.core.prPred name="p24" org.eventb.core.predicate="vendors⊆USER"/>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="package_status={pending,in_progress,delivered}"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="partition(SYS_ADMIN,{sys_admin})"/>
+        <org.eventb.core.prPred name="p25" org.eventb.core.predicate="packages⊆PACKAGE"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="packages_vendors∈packages → vendors"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="messages_sent∈messages → packages"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="partition(package_status,{pending},{in_progress},{delivered})"/>
+        <org.eventb.core.prPred name="p28" org.eventb.core.predicate="¬packages_own_status(package)=in_progress"/>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="packages_own_status(package)=pending"/>
+        <org.eventb.core.prPred name="p29" org.eventb.core.predicate="¬packages_own_status(package)=delivered"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.he:1"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="assignPackage/grd7/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4" org.eventb.core.prSets="PACKAGE,USER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(package_status,{pending},{in_progress},{delivered}))" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p5" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p6,p7,p8,p9"/>
+                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p6,p7,p8,p9"/>
+                <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(SYS_ADMIN,{sys_admin}))" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p10" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p11"/>
+                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p11"/>
+                        <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'">
+                                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p12" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p13"/>
+                                <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'">
+                                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p14"/>
+                                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p15"/>
+                                        <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p16"/>
+                                        <org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p17"/>
+                                        <org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p18"/>
+                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p19">
+                                                <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p19" org.eventb.core.prHyps="p4">
+                                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p2">
+                                                        <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p2" org.eventb.core.prHyps="p2"/>
+                                                    </org.eventb.core.prAnte>
+                                                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+                                                    <org.eventb.core.prExprRef name=".subst" org.eventb.core.prRef="e0"/>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                            <org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p20">
+                                                <org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p20" org.eventb.core.prHyps="p4"/>
+                                            </org.eventb.core.prAnte>
+                                            <org.eventb.core.prAnte name=")" org.eventb.core.prGoal="p21">
+                                                <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p21" org.eventb.core.prHyps="p1">
+                                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p3">
+                                                        <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p3" org.eventb.core.prHyps="p3"/>
+                                                    </org.eventb.core.prAnte>
+                                                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+                                                    <org.eventb.core.prExprRef name=".subst" org.eventb.core.prRef="e1"/>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                            <org.eventb.core.prAnte name="*" org.eventb.core.prGoal="p22">
+                                                <org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p22" org.eventb.core.prHyps="p1"/>
+                                            </org.eventb.core.prAnte>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="driver" org.eventb.core.type="USER"/>
+        <org.eventb.core.prIdent name="drivers" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prIdent name="drivers_size_limit" org.eventb.core.type="ℙ(USER×ℤ)"/>
+        <org.eventb.core.prIdent name="package" org.eventb.core.type="PACKAGE"/>
+        <org.eventb.core.prIdent name="packages" org.eventb.core.type="ℙ(PACKAGE)"/>
+        <org.eventb.core.prIdent name="packages_size_limit" org.eventb.core.type="ℙ(PACKAGE×ℤ)"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="driver∈drivers"/>
+        <org.eventb.core.prPred name="p18" org.eventb.core.predicate="messages⊆MESSAGE">
+            <org.eventb.core.prIdent name="MESSAGE" org.eventb.core.type="ℙ(MESSAGE)"/>
+            <org.eventb.core.prIdent name="messages" org.eventb.core.type="ℙ(MESSAGE)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p20" org.eventb.core.predicate="packages_size_limit∈PACKAGE ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p21" org.eventb.core.predicate="driver∈dom(drivers_size_limit)"/>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="drivers⊆USER"/>
+        <org.eventb.core.prPred name="p22" org.eventb.core.predicate="drivers_size_limit∈USER ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="packages_size_limit∈packages → ℕ1"/>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="vendors⊆USER">
+            <org.eventb.core.prIdent name="vendors" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="¬pending=in_progress">
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="admins⊆USER">
+            <org.eventb.core.prIdent name="admins" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="¬pending=delivered">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="¬in_progress=delivered">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="package_status={pending,in_progress,delivered}">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="drivers_size_limit∈drivers → ℕ"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="package∈packages"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="partition(SYS_ADMIN,{sys_admin})">
+            <org.eventb.core.prIdent name="SYS_ADMIN" org.eventb.core.type="ℙ(SYS_ADMIN)"/>
+            <org.eventb.core.prIdent name="sys_admin" org.eventb.core.type="SYS_ADMIN"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="SYS_ADMIN={sys_admin}">
+            <org.eventb.core.prIdent name="SYS_ADMIN" org.eventb.core.type="ℙ(SYS_ADMIN)"/>
+            <org.eventb.core.prIdent name="sys_admin" org.eventb.core.type="SYS_ADMIN"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="{package} ◁ packages_own_status=(∅ ⦂ ℙ(PACKAGE×package_status))">
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="packages_own_status" org.eventb.core.type="ℙ(PACKAGE×package_status)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p19" org.eventb.core.predicate="package∈dom(packages_size_limit)"/>
+        <org.eventb.core.prPred name="p17" org.eventb.core.predicate="packages⊆PACKAGE"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="partition(package_status,{pending},{in_progress},{delivered})">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="package∈dom(packages_size_limit)∧packages_size_limit∈PACKAGE ⇸ ℤ∧driver∈dom(drivers_size_limit)∧drivers_size_limit∈USER ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="¬package∈dom(packages_own_status)">
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="packages_own_status" org.eventb.core.type="ℙ(PACKAGE×package_status)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prExpr name="e1" org.eventb.core.expression="drivers"/>
+        <org.eventb.core.prExpr name="e0" org.eventb.core.expression="packages"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.isFunGoal"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.totalDom:2"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="changePackageStatusToDelivered/inv13/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7" org.eventb.core.prSets="PACKAGE,USER">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(package_status,{pending},{in_progress},{delivered}))" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p8" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p9,p10,p11,p12"/>
+                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p9,p10,p11,p12"/>
+                <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(SYS_ADMIN,{sys_admin}))" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p13" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p14"/>
+                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p14"/>
+                        <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'">
+                                <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p15"/>
+                                <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p16"/>
+                                <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p17"/>
+                                <org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p18"/>
+                                <org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p19"/>
+                                <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'">
+                                        <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p20,p21,p22,p23,p7,p4,p6,p2,p5"/>
+                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Z3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7">
+                                            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                                            <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="driver" org.eventb.core.type="USER"/>
+        <org.eventb.core.prIdent name="drivers" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prIdent name="drivers_size_limit" org.eventb.core.type="ℙ(USER×ℤ)"/>
+        <org.eventb.core.prIdent name="package" org.eventb.core.type="PACKAGE"/>
+        <org.eventb.core.prIdent name="packages" org.eventb.core.type="ℙ(PACKAGE)"/>
+        <org.eventb.core.prIdent name="packages_size_limit" org.eventb.core.type="ℙ(PACKAGE×ℤ)"/>
+        <org.eventb.core.prPred name="p21" org.eventb.core.predicate="packages_drivers∈packages ⇸ drivers">
+            <org.eventb.core.prIdent name="packages_drivers" org.eventb.core.type="ℙ(PACKAGE×USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="drivers_size_limit{driver ↦ drivers_size_limit(driver)+packages_size_limit(package)}∈drivers → ℕ"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="driver∈drivers"/>
+        <org.eventb.core.prPred name="p19" org.eventb.core.predicate="messages⊆MESSAGE">
+            <org.eventb.core.prIdent name="MESSAGE" org.eventb.core.type="ℙ(MESSAGE)"/>
+            <org.eventb.core.prIdent name="messages" org.eventb.core.type="ℙ(MESSAGE)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p22" org.eventb.core.predicate="packages_own_status∈packages ⇸ package_status">
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="packages_own_status" org.eventb.core.type="ℙ(PACKAGE×package_status)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="driver∈dom(drivers_size_limit)"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="packages_size_limit∈PACKAGE ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="drivers_size_limit∈USER ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="drivers⊆USER"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="packages_size_limit∈packages → ℕ1"/>
+        <org.eventb.core.prPred name="p17" org.eventb.core.predicate="vendors⊆USER">
+            <org.eventb.core.prIdent name="vendors" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="¬pending=in_progress">
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="admins⊆USER">
+            <org.eventb.core.prIdent name="admins" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="¬pending=delivered">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬in_progress=delivered">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="package_status={pending,in_progress,delivered}">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="drivers_size_limit∈drivers → ℕ"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="partition(SYS_ADMIN,{sys_admin})">
+            <org.eventb.core.prIdent name="SYS_ADMIN" org.eventb.core.type="ℙ(SYS_ADMIN)"/>
+            <org.eventb.core.prIdent name="sys_admin" org.eventb.core.type="SYS_ADMIN"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="SYS_ADMIN={sys_admin}">
+            <org.eventb.core.prIdent name="SYS_ADMIN" org.eventb.core.type="ℙ(SYS_ADMIN)"/>
+            <org.eventb.core.prIdent name="sys_admin" org.eventb.core.type="SYS_ADMIN"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="package∈dom(packages_size_limit)"/>
+        <org.eventb.core.prPred name="p18" org.eventb.core.predicate="packages⊆PACKAGE"/>
+        <org.eventb.core.prPred name="p20" org.eventb.core.predicate="packages_vendors∈packages → vendors">
+            <org.eventb.core.prIdent name="packages_vendors" org.eventb.core.type="ℙ(PACKAGE×USER)"/>
+            <org.eventb.core.prIdent name="vendors" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="partition(package_status,{pending},{in_progress},{delivered})">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p23" org.eventb.core.predicate="messages_sent∈messages → packages">
+            <org.eventb.core.prIdent name="MESSAGE" org.eventb.core.type="ℙ(MESSAGE)"/>
+            <org.eventb.core.prIdent name="messages" org.eventb.core.type="ℙ(MESSAGE)"/>
+            <org.eventb.core.prIdent name="messages_sent" org.eventb.core.type="ℙ(MESSAGE×PACKAGE)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="changePackageStatusToDelivered/act2/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11" org.eventb.core.prSets="MESSAGE,PACKAGE,SYS_ADMIN,USER,package_status">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(package_status,{pending},{in_progress},{delivered}))" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p8" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p12,p13,p14,p15"/>
+                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p12,p13,p14,p15"/>
+                <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(SYS_ADMIN,{sys_admin}))" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p3" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p16"/>
+                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p16"/>
+                        <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'">
+                                <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p17"/>
+                                <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p18"/>
+                                <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p19"/>
+                                <org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p20"/>
+                                <org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p21"/>
+                                <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p22">
+                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p22" org.eventb.core.prHyps="p2">
+                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p5">
+                                                <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p5" org.eventb.core.prHyps="p5"/>
+                                            </org.eventb.core.prAnte>
+                                            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+                                            <org.eventb.core.prExprRef name=".subst" org.eventb.core.prRef="e0"/>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                    <org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p23">
+                                        <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p23" org.eventb.core.prHyps="p2"/>
+                                    </org.eventb.core.prAnte>
+                                    <org.eventb.core.prAnte name=")" org.eventb.core.prGoal="p24">
+                                        <org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+                                            <org.eventb.core.prAnte name="'">
+                                                <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p4,p1,p6,p7,p10,p2"/>
+                                                <org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="CVC3" org.eventb.core.prGoal="p24" org.eventb.core.prHyps="p5,p9,p11,p12,p13,p14,p15,p16,p4,p1,p6,p7,p10,p2">
+                                                    <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                                                    <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="CVC3"/>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                    <org.eventb.core.prAnte name="*" org.eventb.core.prGoal="p25">
+                                        <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p25" org.eventb.core.prHyps="p10"/>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+        <org.eventb.core.prIdent name="driver" org.eventb.core.type="USER"/>
+        <org.eventb.core.prIdent name="drivers" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prIdent name="drivers_size_limit" org.eventb.core.type="ℙ(USER×ℤ)"/>
+        <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+        <org.eventb.core.prIdent name="messages" org.eventb.core.type="ℙ(MESSAGE)"/>
+        <org.eventb.core.prIdent name="messages_sent" org.eventb.core.type="ℙ(MESSAGE×PACKAGE)"/>
+        <org.eventb.core.prIdent name="package" org.eventb.core.type="PACKAGE"/>
+        <org.eventb.core.prIdent name="packages" org.eventb.core.type="ℙ(PACKAGE)"/>
+        <org.eventb.core.prIdent name="packages_drivers" org.eventb.core.type="ℙ(PACKAGE×USER)"/>
+        <org.eventb.core.prIdent name="packages_own_status" org.eventb.core.type="ℙ(PACKAGE×package_status)"/>
+        <org.eventb.core.prIdent name="packages_size_limit" org.eventb.core.type="ℙ(PACKAGE×ℤ)"/>
+        <org.eventb.core.prIdent name="packages_vendors" org.eventb.core.type="ℙ(PACKAGE×USER)"/>
+        <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        <org.eventb.core.prIdent name="sys_admin" org.eventb.core.type="SYS_ADMIN"/>
+        <org.eventb.core.prIdent name="user" org.eventb.core.type="USER"/>
+        <org.eventb.core.prIdent name="vendors" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="packages_drivers∈packages ⇸ drivers"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="driver∈drivers"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="packages_own_status∈packages ⇸ package_status"/>
+        <org.eventb.core.prPred name="p22" org.eventb.core.predicate="driver∈dom(drivers_size_limit)"/>
+        <org.eventb.core.prPred name="p25" org.eventb.core.predicate="packages_size_limit∈PACKAGE ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="¬pending=in_progress"/>
+        <org.eventb.core.prPred name="p17" org.eventb.core.predicate="admins⊆USER">
+            <org.eventb.core.prIdent name="admins" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="¬pending=delivered"/>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="¬in_progress=delivered"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="drivers_size_limit∈drivers → ℕ"/>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="SYS_ADMIN={sys_admin}"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="user∈drivers"/>
+        <org.eventb.core.prPred name="p21" org.eventb.core.predicate="messages⊆MESSAGE"/>
+        <org.eventb.core.prPred name="p18" org.eventb.core.predicate="drivers⊆USER"/>
+        <org.eventb.core.prPred name="p23" org.eventb.core.predicate="drivers_size_limit∈USER ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="packages_size_limit∈packages → ℕ1"/>
+        <org.eventb.core.prPred name="p19" org.eventb.core.predicate="vendors⊆USER"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="driver∈dom(drivers_size_limit)∧drivers_size_limit∈USER ⇸ ℤ∧package∈dom(packages_size_limit)∧packages_size_limit∈PACKAGE ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="package∈dom(packages_own_status ▷ {in_progress})∩dom(packages_drivers ▷ {driver})"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="package_status={pending,in_progress,delivered}"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="partition(SYS_ADMIN,{sys_admin})"/>
+        <org.eventb.core.prPred name="p24" org.eventb.core.predicate="package∈dom(packages_size_limit)"/>
+        <org.eventb.core.prPred name="p20" org.eventb.core.predicate="packages⊆PACKAGE"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="packages_vendors∈packages → vendors"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="messages_sent∈messages → packages"/>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="partition(package_status,{pending},{in_progress},{delivered})"/>
+        <org.eventb.core.prExpr name="e0" org.eventb.core.expression="drivers"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.isFunGoal"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.totalDom:2"/>
+        <org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+        <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="assignPackage/packages_own_status/EQL" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prHyps="">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(package_status,{pending},{allocated},{in_progress},{delivered}))" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p0" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p1,p2,p3,p4,p5,p6,p7"/>
+                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7"/>
+                <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(SYS_ADMIN,{sys_admin}))" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p8" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p9"/>
+                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p9"/>
+                        <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'">
+                                <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p10"/>
+                                <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p11"/>
+                                <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p12"/>
+                                <org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p13"/>
+                                <org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p14"/>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="messages⊆MESSAGE">
+            <org.eventb.core.prIdent name="MESSAGE" org.eventb.core.type="ℙ(MESSAGE)"/>
+            <org.eventb.core.prIdent name="messages" org.eventb.core.type="ℙ(MESSAGE)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="drivers⊆USER">
+            <org.eventb.core.prIdent name="USER" org.eventb.core.type="ℙ(USER)"/>
+            <org.eventb.core.prIdent name="drivers" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="package_status={pending,allocated,in_progress,delivered}">
+            <org.eventb.core.prIdent name="allocated" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="¬allocated=delivered">
+            <org.eventb.core.prIdent name="allocated" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="vendors⊆USER">
+            <org.eventb.core.prIdent name="USER" org.eventb.core.type="ℙ(USER)"/>
+            <org.eventb.core.prIdent name="vendors" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="¬pending=in_progress">
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="admins⊆USER">
+            <org.eventb.core.prIdent name="USER" org.eventb.core.type="ℙ(USER)"/>
+            <org.eventb.core.prIdent name="admins" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬pending=delivered">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="¬allocated=in_progress">
+            <org.eventb.core.prIdent name="allocated" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="¬in_progress=delivered">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="partition(package_status,{pending},{allocated},{in_progress},{delivered})">
+            <org.eventb.core.prIdent name="allocated" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="partition(SYS_ADMIN,{sys_admin})">
+            <org.eventb.core.prIdent name="SYS_ADMIN" org.eventb.core.type="ℙ(SYS_ADMIN)"/>
+            <org.eventb.core.prIdent name="sys_admin" org.eventb.core.type="SYS_ADMIN"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="SYS_ADMIN={sys_admin}">
+            <org.eventb.core.prIdent name="SYS_ADMIN" org.eventb.core.type="ℙ(SYS_ADMIN)"/>
+            <org.eventb.core.prIdent name="sys_admin" org.eventb.core.type="SYS_ADMIN"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="¬pending=allocated">
+            <org.eventb.core.prIdent name="allocated" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+            <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="packages⊆PACKAGE">
+            <org.eventb.core.prIdent name="PACKAGE" org.eventb.core.type="ℙ(PACKAGE)"/>
+            <org.eventb.core.prIdent name="packages" org.eventb.core.type="ℙ(PACKAGE)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="cancelPendingPackage/inv13/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p8,p9" org.eventb.core.prSets="PACKAGE,USER,package_status">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(package_status,{pending},{in_progress},{delivered}))" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p10" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p11,p12,p13,p14"/>
+                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p11,p12,p13,p14"/>
+                <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(SYS_ADMIN,{sys_admin}))" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p15" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p16"/>
+                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p16"/>
+                        <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'">
+                                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p17" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p18"/>
+                                <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'">
+                                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p19"/>
+                                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p20"/>
+                                        <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p21"/>
+                                        <org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p22"/>
+                                        <org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p23"/>
+                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="he with packages_own_status(package)=pending" org.eventb.core.prHyps="p8">
+                                            <org.eventb.core.prAnte name="'">
+                                                <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p11" org.eventb.core.prInfHyps="p24"/>
+                                                <org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p12" org.eventb.core.prInfHyps="p25"/>
+                                                <org.eventb.core.prHypAction name="FORWARD_INF2" org.eventb.core.prHyps="p13" org.eventb.core.prInfHyps="p26"/>
+                                                <org.eventb.core.prHypAction name="DESELECT3" org.eventb.core.prHyps="p11,p12,p13"/>
+                                                <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="sl/ds" org.eventb.core.prHyps="">
+                                                    <org.eventb.core.prAnte name="'">
+                                                        <org.eventb.core.prHypAction name="SELECT0" org.eventb.core.prHyps="p27,p1,p28,p29,p6,p30,p31,p4,p9,p5,p3,p32,p11,p12,p13"/>
+                                                        <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Z3" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6,p7,p9">
+                                                            <org.eventb.core.prString name=".arg" org.eventb.core.prSValue="R1000"/>
+                                                            <org.eventb.core.prString name=".config_id" org.eventb.core.prSValue="Z3"/>
+                                                        </org.eventb.core.prRule>
+                                                    </org.eventb.core.prAnte>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="admins" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prIdent name="drivers" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prIdent name="drivers_size_limit" org.eventb.core.type="ℙ(USER×ℤ)"/>
+        <org.eventb.core.prIdent name="package" org.eventb.core.type="PACKAGE"/>
+        <org.eventb.core.prIdent name="packages" org.eventb.core.type="ℙ(PACKAGE)"/>
+        <org.eventb.core.prIdent name="packages_drivers" org.eventb.core.type="ℙ(PACKAGE×USER)"/>
+        <org.eventb.core.prIdent name="packages_own_status" org.eventb.core.type="ℙ(PACKAGE×package_status)"/>
+        <org.eventb.core.prIdent name="packages_size_limit" org.eventb.core.type="ℙ(PACKAGE×ℤ)"/>
+        <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        <org.eventb.core.prIdent name="user" org.eventb.core.type="USER"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="packages_drivers∈packages ⇸ drivers"/>
+        <org.eventb.core.prPred name="p28" org.eventb.core.predicate="packages_own_status∈packages ⇸ package_status"/>
+        <org.eventb.core.prPred name="p32" org.eventb.core.predicate="packages_size_limit∈PACKAGE ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p31" org.eventb.core.predicate="package∈dom(packages_drivers)"/>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="¬pending=in_progress">
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p19" org.eventb.core.predicate="admins⊆USER"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="¬pending=delivered">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="user∈admins"/>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="¬in_progress=delivered">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p17" org.eventb.core.predicate="{package} ◁ packages_own_status≠(∅ ⦂ ℙ(PACKAGE×package_status))"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="packages_drivers(package)∈dom(drivers_size_limit)"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="drivers_size_limit∈drivers → ℕ"/>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="SYS_ADMIN={sys_admin}">
+            <org.eventb.core.prIdent name="SYS_ADMIN" org.eventb.core.type="ℙ(SYS_ADMIN)"/>
+            <org.eventb.core.prIdent name="sys_admin" org.eventb.core.type="SYS_ADMIN"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p24" org.eventb.core.predicate="package_status={packages_own_status(package),in_progress,delivered}">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="drivers_size_limit{packages_drivers(package) ↦ drivers_size_limit(packages_drivers(package))+packages_size_limit(package)}∈drivers → ℕ"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="packages_drivers∈PACKAGE ⇸ USER"/>
+        <org.eventb.core.prPred name="p30" org.eventb.core.predicate="packages_own_status∈PACKAGE ⇸ package_status"/>
+        <org.eventb.core.prPred name="p23" org.eventb.core.predicate="messages⊆MESSAGE">
+            <org.eventb.core.prIdent name="MESSAGE" org.eventb.core.type="ℙ(MESSAGE)"/>
+            <org.eventb.core.prIdent name="messages" org.eventb.core.type="ℙ(MESSAGE)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p18" org.eventb.core.predicate="package∈dom(packages_own_status)"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="drivers_size_limit∈USER ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p20" org.eventb.core.predicate="drivers⊆USER"/>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="packages_size_limit∈packages → ℕ1"/>
+        <org.eventb.core.prPred name="p21" org.eventb.core.predicate="vendors⊆USER">
+            <org.eventb.core.prIdent name="vendors" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="package_status={pending,in_progress,delivered}">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="partition(SYS_ADMIN,{sys_admin})">
+            <org.eventb.core.prIdent name="SYS_ADMIN" org.eventb.core.type="ℙ(SYS_ADMIN)"/>
+            <org.eventb.core.prIdent name="sys_admin" org.eventb.core.type="SYS_ADMIN"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="package∈dom(packages_size_limit)"/>
+        <org.eventb.core.prPred name="p22" org.eventb.core.predicate="packages⊆PACKAGE"/>
+        <org.eventb.core.prPred name="p27" org.eventb.core.predicate="packages_vendors∈packages → vendors">
+            <org.eventb.core.prIdent name="packages_vendors" org.eventb.core.type="ℙ(PACKAGE×USER)"/>
+            <org.eventb.core.prIdent name="vendors" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="partition(package_status,{pending},{in_progress},{delivered})">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p29" org.eventb.core.predicate="messages_sent∈messages → packages">
+            <org.eventb.core.prIdent name="MESSAGE" org.eventb.core.type="ℙ(MESSAGE)"/>
+            <org.eventb.core.prIdent name="messages" org.eventb.core.type="ℙ(MESSAGE)"/>
+            <org.eventb.core.prIdent name="messages_sent" org.eventb.core.type="ℙ(MESSAGE×PACKAGE)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p25" org.eventb.core.predicate="¬packages_own_status(package)=in_progress">
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="packages_own_status(package)=pending"/>
+        <org.eventb.core.prPred name="p26" org.eventb.core.predicate="¬packages_own_status(package)=delivered">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.he:1"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.mngHyp"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.smt.core.externalSMT"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="cancelPendingPackage/act3/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6" org.eventb.core.prSets="PACKAGE,USER,package_status">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(package_status,{pending},{in_progress},{delivered}))" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p7" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p8,p9,p10,p11"/>
+                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p8,p9,p10,p11"/>
+                <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(SYS_ADMIN,{sys_admin}))" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p12" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p13"/>
+                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p13"/>
+                        <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'">
+                                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p14" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p15"/>
+                                <org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p4" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p16"/>
+                                <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p16">
+                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p17">
+                                        <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p17" org.eventb.core.prHyps="">
+                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p18">
+                                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                                                    <org.eventb.core.prAnte name="'">
+                                                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p19"/>
+                                                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p20"/>
+                                                        <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p21"/>
+                                                        <org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p22"/>
+                                                        <org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p23"/>
+                                                        <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p18" org.eventb.core.prHyps="">
+                                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p24">
+                                                                <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p24" org.eventb.core.prHyps="p1"/>
+                                                            </org.eventb.core.prAnte>
+                                                            <org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p25">
+                                                                <org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="he with packages_own_status(package)=pending" org.eventb.core.prHyps="p6">
+                                                                    <org.eventb.core.prAnte name="'">
+                                                                        <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p8" org.eventb.core.prInfHyps="p26"/>
+                                                                        <org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p9" org.eventb.core.prInfHyps="p27"/>
+                                                                        <org.eventb.core.prHypAction name="FORWARD_INF2" org.eventb.core.prHyps="p10" org.eventb.core.prInfHyps="p28"/>
+                                                                        <org.eventb.core.prHypAction name="DESELECT3" org.eventb.core.prHyps="p8,p9,p10"/>
+                                                                        <org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional image goal for packages_drivers(package)" org.eventb.core.prGoal="p25" org.eventb.core.prHyps="p1">
+                                                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p25" org.eventb.core.prHyps="p29">
+                                                                                <org.eventb.core.prRule name="r8" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p25" org.eventb.core.prHyps="p2">
+                                                                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p29">
+                                                                                        <org.eventb.core.prRule name="r9" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p29" org.eventb.core.prHyps="p29"/>
+                                                                                    </org.eventb.core.prAnte>
+                                                                                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+                                                                                    <org.eventb.core.prExprRef name=".subst" org.eventb.core.prRef="e0"/>
+                                                                                </org.eventb.core.prRule>
+                                                                            </org.eventb.core.prAnte>
+                                                                            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="0"/>
+                                                                        </org.eventb.core.prRule>
+                                                                    </org.eventb.core.prAnte>
+                                                                </org.eventb.core.prRule>
+                                                            </org.eventb.core.prAnte>
+                                                            <org.eventb.core.prAnte name=")" org.eventb.core.prGoal="p30">
+                                                                <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p30" org.eventb.core.prHyps="p2"/>
+                                                            </org.eventb.core.prAnte>
+                                                            <org.eventb.core.prAnte name="*" org.eventb.core.prGoal="p31">
+                                                                <org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="he with packages_own_status(package)=pending" org.eventb.core.prHyps="p6">
+                                                                    <org.eventb.core.prAnte name="'">
+                                                                        <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p8" org.eventb.core.prInfHyps="p26"/>
+                                                                        <org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p9" org.eventb.core.prInfHyps="p27"/>
+                                                                        <org.eventb.core.prHypAction name="FORWARD_INF2" org.eventb.core.prHyps="p10" org.eventb.core.prInfHyps="p28"/>
+                                                                        <org.eventb.core.prHypAction name="DESELECT3" org.eventb.core.prHyps="p8,p9,p10"/>
+                                                                        <org.eventb.core.prRule name="r8" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p31" org.eventb.core.prHyps="p5">
+                                                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p3">
+                                                                                <org.eventb.core.prRule name="r9" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p3" org.eventb.core.prHyps="p3"/>
+                                                                            </org.eventb.core.prAnte>
+                                                                            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+                                                                            <org.eventb.core.prExprRef name=".subst" org.eventb.core.prRef="e1"/>
+                                                                        </org.eventb.core.prRule>
+                                                                    </org.eventb.core.prAnte>
+                                                                </org.eventb.core.prRule>
+                                                            </org.eventb.core.prAnte>
+                                                            <org.eventb.core.prAnte name="+" org.eventb.core.prGoal="p32">
+                                                                <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p32" org.eventb.core.prHyps="p5"/>
+                                                            </org.eventb.core.prAnte>
+                                                        </org.eventb.core.prRule>
+                                                    </org.eventb.core.prAnte>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="drivers" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prIdent name="drivers_size_limit" org.eventb.core.type="ℙ(USER×ℤ)"/>
+        <org.eventb.core.prIdent name="package" org.eventb.core.type="PACKAGE"/>
+        <org.eventb.core.prIdent name="packages" org.eventb.core.type="ℙ(PACKAGE)"/>
+        <org.eventb.core.prIdent name="packages_drivers" org.eventb.core.type="ℙ(PACKAGE×USER)"/>
+        <org.eventb.core.prIdent name="packages_own_status" org.eventb.core.type="ℙ(PACKAGE×package_status)"/>
+        <org.eventb.core.prIdent name="packages_size_limit" org.eventb.core.type="ℙ(PACKAGE×ℤ)"/>
+        <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="packages_drivers∈packages ⇸ drivers"/>
+        <org.eventb.core.prPred name="p18" org.eventb.core.predicate="packages_drivers∈PACKAGE ⇸ USER∧packages_drivers(package)∈dom(drivers_size_limit)∧drivers_size_limit∈USER ⇸ ℤ∧package∈dom(packages_size_limit)∧packages_size_limit∈PACKAGE ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p32" org.eventb.core.predicate="packages_size_limit∈PACKAGE ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="package∈dom(packages_drivers)"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="¬pending=in_progress">
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p19" org.eventb.core.predicate="admins⊆USER">
+            <org.eventb.core.prIdent name="admins" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="¬pending=delivered">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p17" org.eventb.core.predicate="⊤∧packages_drivers∈PACKAGE ⇸ USER∧packages_drivers(package)∈dom(drivers_size_limit)∧drivers_size_limit∈USER ⇸ ℤ∧package∈dom(packages_size_limit)∧packages_size_limit∈PACKAGE ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="¬in_progress=delivered">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="{package} ◁ packages_own_status≠(∅ ⦂ ℙ(PACKAGE×package_status))"/>
+        <org.eventb.core.prPred name="p25" org.eventb.core.predicate="packages_drivers(package)∈dom(drivers_size_limit)"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="drivers_size_limit∈drivers → ℕ"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="package∈packages"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="SYS_ADMIN={sys_admin}">
+            <org.eventb.core.prIdent name="SYS_ADMIN" org.eventb.core.type="ℙ(SYS_ADMIN)"/>
+            <org.eventb.core.prIdent name="sys_admin" org.eventb.core.type="SYS_ADMIN"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p26" org.eventb.core.predicate="package_status={packages_own_status(package),in_progress,delivered}">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p29" org.eventb.core.predicate="packages_drivers(package)∈drivers"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="{package} ◁ packages_drivers≠(∅ ⦂ ℙ(PACKAGE×USER))"/>
+        <org.eventb.core.prPred name="p24" org.eventb.core.predicate="packages_drivers∈PACKAGE ⇸ USER"/>
+        <org.eventb.core.prPred name="p23" org.eventb.core.predicate="messages⊆MESSAGE">
+            <org.eventb.core.prIdent name="MESSAGE" org.eventb.core.type="ℙ(MESSAGE)"/>
+            <org.eventb.core.prIdent name="messages" org.eventb.core.type="ℙ(MESSAGE)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="package∈dom(packages_own_status)"/>
+        <org.eventb.core.prPred name="p20" org.eventb.core.predicate="drivers⊆USER"/>
+        <org.eventb.core.prPred name="p30" org.eventb.core.predicate="drivers_size_limit∈USER ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="packages_size_limit∈packages → ℕ1"/>
+        <org.eventb.core.prPred name="p21" org.eventb.core.predicate="vendors⊆USER">
+            <org.eventb.core.prIdent name="vendors" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="package_status={pending,in_progress,delivered}">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="partition(SYS_ADMIN,{sys_admin})">
+            <org.eventb.core.prIdent name="SYS_ADMIN" org.eventb.core.type="ℙ(SYS_ADMIN)"/>
+            <org.eventb.core.prIdent name="sys_admin" org.eventb.core.type="SYS_ADMIN"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p31" org.eventb.core.predicate="package∈dom(packages_size_limit)"/>
+        <org.eventb.core.prPred name="p22" org.eventb.core.predicate="packages⊆PACKAGE"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="partition(package_status,{pending},{in_progress},{delivered})">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="package∈dom(packages_drivers)∧packages_drivers∈PACKAGE ⇸ USER∧packages_drivers(package)∈dom(drivers_size_limit)∧drivers_size_limit∈USER ⇸ ℤ∧package∈dom(packages_size_limit)∧packages_size_limit∈PACKAGE ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p27" org.eventb.core.predicate="¬packages_own_status(package)=in_progress">
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="packages_own_status(package)=pending"/>
+        <org.eventb.core.prPred name="p28" org.eventb.core.predicate="¬packages_own_status(package)=delivered">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prExpr name="e0" org.eventb.core.expression="drivers"/>
+        <org.eventb.core.prExpr name="e1" org.eventb.core.expression="packages"/>
+        <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.funImgGoal"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r9" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL3"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.isFunGoal"/>
+        <org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.he:1"/>
+        <org.eventb.core.prReas name="r8" org.eventb.core.prRID="org.eventb.core.seqprover.totalDom:2"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="cancelPendingPackage/grd6/WD" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2" org.eventb.core.prSets="PACKAGE,USER,package_status">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(package_status,{pending},{in_progress},{delivered}))" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p3" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p4,p5,p6,p7"/>
+                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p4,p5,p6,p7"/>
+                <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(SYS_ADMIN,{sys_admin}))" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p8" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p9"/>
+                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p9"/>
+                        <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'">
+                                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p10" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p11"/>
+                                <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                                    <org.eventb.core.prAnte name="'">
+                                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p12"/>
+                                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p13"/>
+                                        <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p14"/>
+                                        <org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p15"/>
+                                        <org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p16"/>
+                                        <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p17">
+                                                <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="he with packages_own_status(package)=pending" org.eventb.core.prHyps="p2">
+                                                    <org.eventb.core.prAnte name="'">
+                                                        <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p4" org.eventb.core.prInfHyps="p18"/>
+                                                        <org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p5" org.eventb.core.prInfHyps="p19"/>
+                                                        <org.eventb.core.prHypAction name="FORWARD_INF2" org.eventb.core.prHyps="p6" org.eventb.core.prInfHyps="p20"/>
+                                                        <org.eventb.core.prHypAction name="DESELECT3" org.eventb.core.prHyps="p4,p5,p6"/>
+                                                    </org.eventb.core.prAnte>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                            <org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p21">
+                                                <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p21" org.eventb.core.prHyps="p1"/>
+                                            </org.eventb.core.prAnte>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="drivers" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prIdent name="package" org.eventb.core.type="PACKAGE"/>
+        <org.eventb.core.prIdent name="packages" org.eventb.core.type="ℙ(PACKAGE)"/>
+        <org.eventb.core.prIdent name="packages_drivers" org.eventb.core.type="ℙ(PACKAGE×USER)"/>
+        <org.eventb.core.prIdent name="packages_own_status" org.eventb.core.type="ℙ(PACKAGE×package_status)"/>
+        <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="package∈dom(packages_drivers)∧packages_drivers∈PACKAGE ⇸ USER"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="packages_drivers∈packages ⇸ drivers"/>
+        <org.eventb.core.prPred name="p21" org.eventb.core.predicate="packages_drivers∈PACKAGE ⇸ USER"/>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="messages⊆MESSAGE">
+            <org.eventb.core.prIdent name="MESSAGE" org.eventb.core.type="ℙ(MESSAGE)"/>
+            <org.eventb.core.prIdent name="messages" org.eventb.core.type="ℙ(MESSAGE)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="package∈dom(packages_own_status)"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="drivers⊆USER"/>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="vendors⊆USER">
+            <org.eventb.core.prIdent name="vendors" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p17" org.eventb.core.predicate="package∈dom(packages_drivers)"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="¬pending=in_progress">
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="admins⊆USER">
+            <org.eventb.core.prIdent name="admins" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="¬pending=delivered">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="¬in_progress=delivered">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="{package} ◁ packages_own_status≠(∅ ⦂ ℙ(PACKAGE×package_status))"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="package_status={pending,in_progress,delivered}">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="partition(SYS_ADMIN,{sys_admin})">
+            <org.eventb.core.prIdent name="SYS_ADMIN" org.eventb.core.type="ℙ(SYS_ADMIN)"/>
+            <org.eventb.core.prIdent name="sys_admin" org.eventb.core.type="SYS_ADMIN"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="SYS_ADMIN={sys_admin}">
+            <org.eventb.core.prIdent name="SYS_ADMIN" org.eventb.core.type="ℙ(SYS_ADMIN)"/>
+            <org.eventb.core.prIdent name="sys_admin" org.eventb.core.type="SYS_ADMIN"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="packages⊆PACKAGE"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="partition(package_status,{pending},{in_progress},{delivered})">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p18" org.eventb.core.predicate="package_status={packages_own_status(package),in_progress,delivered}">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p19" org.eventb.core.predicate="¬packages_own_status(package)=in_progress">
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="packages_own_status(package)=pending"/>
+        <org.eventb.core.prPred name="p20" org.eventb.core.predicate="¬packages_own_status(package)=delivered">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.isFunGoal"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.he:1"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+    </org.eventb.core.prProof>
+    <org.eventb.core.prProof name="cancelPendingPackage/act5/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5,p6" org.eventb.core.prSets="PACKAGE,USER,package_status">
+        <org.eventb.core.lang name="L"/>
+        <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(package_status,{pending},{in_progress},{delivered}))" org.eventb.core.prHyps="">
+            <org.eventb.core.prAnte name="'">
+                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p7" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p8,p9,p10,p11"/>
+                <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p8,p9,p10,p11"/>
+                <org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="Partition rewrites in hyp (partition(SYS_ADMIN,{sys_admin}))" org.eventb.core.prHyps="">
+                    <org.eventb.core.prAnte name="'">
+                        <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p12" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p13"/>
+                        <org.eventb.core.prHypAction name="SELECT1" org.eventb.core.prHyps="p13"/>
+                        <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+                            <org.eventb.core.prAnte name="'">
+                                <org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p14" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p15"/>
+                                <org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p4" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p16"/>
+                                <org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="generalized MP" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p16">
+                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p17">
+                                        <org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p17" org.eventb.core.prHyps="">
+                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p18">
+                                                <org.eventb.core.prRule name="r3" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+                                                    <org.eventb.core.prAnte name="'">
+                                                        <org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p19"/>
+                                                        <org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p20"/>
+                                                        <org.eventb.core.prHypAction name="HIDE2" org.eventb.core.prHyps="p21"/>
+                                                        <org.eventb.core.prHypAction name="HIDE3" org.eventb.core.prHyps="p22"/>
+                                                        <org.eventb.core.prHypAction name="HIDE4" org.eventb.core.prHyps="p23"/>
+                                                        <org.eventb.core.prRule name="r4" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="∧ goal" org.eventb.core.prGoal="p18" org.eventb.core.prHyps="">
+                                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p24">
+                                                                <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p24" org.eventb.core.prHyps="p1"/>
+                                                            </org.eventb.core.prAnte>
+                                                            <org.eventb.core.prAnte name="(" org.eventb.core.prGoal="p25">
+                                                                <org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="he with packages_own_status(package)=pending" org.eventb.core.prHyps="p6">
+                                                                    <org.eventb.core.prAnte name="'">
+                                                                        <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p8" org.eventb.core.prInfHyps="p26"/>
+                                                                        <org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p9" org.eventb.core.prInfHyps="p27"/>
+                                                                        <org.eventb.core.prHypAction name="FORWARD_INF2" org.eventb.core.prHyps="p10" org.eventb.core.prInfHyps="p28"/>
+                                                                        <org.eventb.core.prHypAction name="DESELECT3" org.eventb.core.prHyps="p8,p9,p10"/>
+                                                                        <org.eventb.core.prRule name="r7" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional image goal for packages_drivers(package)" org.eventb.core.prGoal="p25" org.eventb.core.prHyps="p1">
+                                                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p25" org.eventb.core.prHyps="p29">
+                                                                                <org.eventb.core.prRule name="r8" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p25" org.eventb.core.prHyps="p2">
+                                                                                    <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p29">
+                                                                                        <org.eventb.core.prRule name="r9" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p29" org.eventb.core.prHyps="p29"/>
+                                                                                    </org.eventb.core.prAnte>
+                                                                                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+                                                                                    <org.eventb.core.prExprRef name=".subst" org.eventb.core.prRef="e0"/>
+                                                                                </org.eventb.core.prRule>
+                                                                            </org.eventb.core.prAnte>
+                                                                            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="0"/>
+                                                                        </org.eventb.core.prRule>
+                                                                    </org.eventb.core.prAnte>
+                                                                </org.eventb.core.prRule>
+                                                            </org.eventb.core.prAnte>
+                                                            <org.eventb.core.prAnte name=")" org.eventb.core.prGoal="p30">
+                                                                <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p30" org.eventb.core.prHyps="p2"/>
+                                                            </org.eventb.core.prAnte>
+                                                            <org.eventb.core.prAnte name="*" org.eventb.core.prGoal="p31">
+                                                                <org.eventb.core.prRule name="r6" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="he with packages_own_status(package)=pending" org.eventb.core.prHyps="p6">
+                                                                    <org.eventb.core.prAnte name="'">
+                                                                        <org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p8" org.eventb.core.prInfHyps="p26"/>
+                                                                        <org.eventb.core.prHypAction name="FORWARD_INF1" org.eventb.core.prHyps="p9" org.eventb.core.prInfHyps="p27"/>
+                                                                        <org.eventb.core.prHypAction name="FORWARD_INF2" org.eventb.core.prHyps="p10" org.eventb.core.prInfHyps="p28"/>
+                                                                        <org.eventb.core.prHypAction name="DESELECT3" org.eventb.core.prHyps="p8,p9,p10"/>
+                                                                        <org.eventb.core.prRule name="r8" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="total function dom substitution in goal" org.eventb.core.prGoal="p31" org.eventb.core.prHyps="p5">
+                                                                            <org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p3">
+                                                                                <org.eventb.core.prRule name="r9" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="hyp" org.eventb.core.prGoal="p3" org.eventb.core.prHyps="p3"/>
+                                                                            </org.eventb.core.prAnte>
+                                                                            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue="1"/>
+                                                                            <org.eventb.core.prExprRef name=".subst" org.eventb.core.prRef="e1"/>
+                                                                        </org.eventb.core.prRule>
+                                                                    </org.eventb.core.prAnte>
+                                                                </org.eventb.core.prRule>
+                                                            </org.eventb.core.prAnte>
+                                                            <org.eventb.core.prAnte name="+" org.eventb.core.prGoal="p32">
+                                                                <org.eventb.core.prRule name="r5" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="functional goal" org.eventb.core.prGoal="p32" org.eventb.core.prHyps="p5"/>
+                                                            </org.eventb.core.prAnte>
+                                                        </org.eventb.core.prRule>
+                                                    </org.eventb.core.prAnte>
+                                                </org.eventb.core.prRule>
+                                            </org.eventb.core.prAnte>
+                                        </org.eventb.core.prRule>
+                                    </org.eventb.core.prAnte>
+                                </org.eventb.core.prRule>
+                            </org.eventb.core.prAnte>
+                        </org.eventb.core.prRule>
+                    </org.eventb.core.prAnte>
+                    <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+                </org.eventb.core.prRule>
+            </org.eventb.core.prAnte>
+            <org.eventb.core.prString name=".pos" org.eventb.core.prSValue=""/>
+        </org.eventb.core.prRule>
+        <org.eventb.core.prIdent name="drivers" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.prIdent name="drivers_size_limit" org.eventb.core.type="ℙ(USER×ℤ)"/>
+        <org.eventb.core.prIdent name="package" org.eventb.core.type="PACKAGE"/>
+        <org.eventb.core.prIdent name="packages" org.eventb.core.type="ℙ(PACKAGE)"/>
+        <org.eventb.core.prIdent name="packages_drivers" org.eventb.core.type="ℙ(PACKAGE×USER)"/>
+        <org.eventb.core.prIdent name="packages_own_status" org.eventb.core.type="ℙ(PACKAGE×package_status)"/>
+        <org.eventb.core.prIdent name="packages_size_limit" org.eventb.core.type="ℙ(PACKAGE×ℤ)"/>
+        <org.eventb.core.prIdent name="pending" org.eventb.core.type="package_status"/>
+        <org.eventb.core.prPred name="p1" org.eventb.core.predicate="packages_drivers∈packages ⇸ drivers"/>
+        <org.eventb.core.prPred name="p18" org.eventb.core.predicate="packages_drivers∈PACKAGE ⇸ USER∧packages_drivers(package)∈dom(drivers_size_limit)∧drivers_size_limit∈USER ⇸ ℤ∧package∈dom(packages_size_limit)∧packages_size_limit∈PACKAGE ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p32" org.eventb.core.predicate="packages_size_limit∈PACKAGE ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p16" org.eventb.core.predicate="package∈dom(packages_drivers)"/>
+        <org.eventb.core.prPred name="p9" org.eventb.core.predicate="¬pending=in_progress">
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p19" org.eventb.core.predicate="admins⊆USER">
+            <org.eventb.core.prIdent name="admins" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p10" org.eventb.core.predicate="¬pending=delivered">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p17" org.eventb.core.predicate="⊤∧packages_drivers∈PACKAGE ⇸ USER∧packages_drivers(package)∈dom(drivers_size_limit)∧drivers_size_limit∈USER ⇸ ℤ∧package∈dom(packages_size_limit)∧packages_size_limit∈PACKAGE ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p11" org.eventb.core.predicate="¬in_progress=delivered">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p14" org.eventb.core.predicate="{package} ◁ packages_own_status≠(∅ ⦂ ℙ(PACKAGE×package_status))"/>
+        <org.eventb.core.prPred name="p25" org.eventb.core.predicate="packages_drivers(package)∈dom(drivers_size_limit)"/>
+        <org.eventb.core.prPred name="p2" org.eventb.core.predicate="drivers_size_limit∈drivers → ℕ"/>
+        <org.eventb.core.prPred name="p3" org.eventb.core.predicate="package∈packages"/>
+        <org.eventb.core.prPred name="p13" org.eventb.core.predicate="SYS_ADMIN={sys_admin}">
+            <org.eventb.core.prIdent name="SYS_ADMIN" org.eventb.core.type="ℙ(SYS_ADMIN)"/>
+            <org.eventb.core.prIdent name="sys_admin" org.eventb.core.type="SYS_ADMIN"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p26" org.eventb.core.predicate="package_status={packages_own_status(package),in_progress,delivered}">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p29" org.eventb.core.predicate="packages_drivers(package)∈drivers"/>
+        <org.eventb.core.prPred name="p4" org.eventb.core.predicate="{package} ◁ packages_drivers≠(∅ ⦂ ℙ(PACKAGE×USER))"/>
+        <org.eventb.core.prPred name="p24" org.eventb.core.predicate="packages_drivers∈PACKAGE ⇸ USER"/>
+        <org.eventb.core.prPred name="p23" org.eventb.core.predicate="messages⊆MESSAGE">
+            <org.eventb.core.prIdent name="MESSAGE" org.eventb.core.type="ℙ(MESSAGE)"/>
+            <org.eventb.core.prIdent name="messages" org.eventb.core.type="ℙ(MESSAGE)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p15" org.eventb.core.predicate="package∈dom(packages_own_status)"/>
+        <org.eventb.core.prPred name="p20" org.eventb.core.predicate="drivers⊆USER"/>
+        <org.eventb.core.prPred name="p30" org.eventb.core.predicate="drivers_size_limit∈USER ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p5" org.eventb.core.predicate="packages_size_limit∈packages → ℕ1"/>
+        <org.eventb.core.prPred name="p21" org.eventb.core.predicate="vendors⊆USER">
+            <org.eventb.core.prIdent name="vendors" org.eventb.core.type="ℙ(USER)"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p8" org.eventb.core.predicate="package_status={pending,in_progress,delivered}">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p12" org.eventb.core.predicate="partition(SYS_ADMIN,{sys_admin})">
+            <org.eventb.core.prIdent name="SYS_ADMIN" org.eventb.core.type="ℙ(SYS_ADMIN)"/>
+            <org.eventb.core.prIdent name="sys_admin" org.eventb.core.type="SYS_ADMIN"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p31" org.eventb.core.predicate="package∈dom(packages_size_limit)"/>
+        <org.eventb.core.prPred name="p22" org.eventb.core.predicate="packages⊆PACKAGE"/>
+        <org.eventb.core.prPred name="p7" org.eventb.core.predicate="partition(package_status,{pending},{in_progress},{delivered})">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p0" org.eventb.core.predicate="package∈dom(packages_drivers)∧packages_drivers∈PACKAGE ⇸ USER∧packages_drivers(package)∈dom(drivers_size_limit)∧drivers_size_limit∈USER ⇸ ℤ∧package∈dom(packages_size_limit)∧packages_size_limit∈PACKAGE ⇸ ℤ"/>
+        <org.eventb.core.prPred name="p27" org.eventb.core.predicate="¬packages_own_status(package)=in_progress">
+            <org.eventb.core.prIdent name="in_progress" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prPred name="p6" org.eventb.core.predicate="packages_own_status(package)=pending"/>
+        <org.eventb.core.prPred name="p28" org.eventb.core.predicate="¬packages_own_status(package)=delivered">
+            <org.eventb.core.prIdent name="delivered" org.eventb.core.type="package_status"/>
+        </org.eventb.core.prPred>
+        <org.eventb.core.prExpr name="e0" org.eventb.core.expression="drivers"/>
+        <org.eventb.core.prExpr name="e1" org.eventb.core.expression="packages"/>
+        <org.eventb.core.prReas name="r3" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+        <org.eventb.core.prReas name="r7" org.eventb.core.prRID="org.eventb.core.seqprover.funImgGoal"/>
+        <org.eventb.core.prReas name="r6" org.eventb.core.prRID="org.eventb.core.seqprover.he:1"/>
+        <org.eventb.core.prReas name="r8" org.eventb.core.prRID="org.eventb.core.seqprover.totalDom:2"/>
+        <org.eventb.core.prReas name="r4" org.eventb.core.prRID="org.eventb.core.seqprover.conj:0"/>
+        <org.eventb.core.prReas name="r5" org.eventb.core.prRID="org.eventb.core.seqprover.isFunGoal"/>
+        <org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+        <org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.genMPL3"/>
+        <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.partitionRewrites"/>
+        <org.eventb.core.prReas name="r9" org.eventb.core.prRID="org.eventb.core.seqprover.hyp"/>
+    </org.eventb.core.prProof>
+</org.eventb.core.prFile>

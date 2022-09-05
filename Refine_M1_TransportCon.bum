@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" org.eventb.core.generated="false" org.eventb.texttools.text_lastmodified="1641769956216" org.eventb.texttools.text_representation="machine Refine_M1_TransportCon refines Machine1_TransportCon  sees Refine_C1_TransportCon&#10;&#10;variables admins vendors drivers packages messages packages_own_status packages_vendors packages_drivers messages_sent packages_size_limit drivers_size_limit&#10;&#10;invariants&#10;  @inv12 packages_size_limit ∈ packages → ℕ1 // Define packages size. Every packages_size can't have many packages&#10;  @inv13 drivers_size_limit ∈ drivers → ℕ // Define drivers size.&#10;&#10;events&#10;  event INITIALISATION extends INITIALISATION&#10;    then&#10;      @act12 packages_size_limit ≔ ∅&#10;      @act13 drivers_size_limit ≔ ∅&#10;  end&#10;&#10;  event addPackage extends addPackage&#10;    any p_size&#10;    where&#10;    @grd4 p_size ∈ ℕ1 // Package size should be positive number&#10;    @grd5 p_size ≤ vehicle_capacity_max // Package size should not greater than vehicle max capacity&#10;    then&#10;      @act3 packages_size_limit(package) ≔  p_size // Add the relationship between package and p_size&#10;  end&#10;&#10;  event addDriver extends addDriver&#10;    any d_size&#10;    where&#10;      @grd6 d_size ∈  {4, 8, 18, 26, 32, 38, 40, 41, 44} // Drivers' vehicle will choose one from a set of all allowed truck type in UK. And they all have different capacity.&#10;    then&#10;      @act2 drivers_size_limit(driver) ≔  d_size // Add the relationship between driver and d_size&#10;  end&#10;&#10;  event assignPackage extends assignPackage&#10;    where&#10;      @grd7 packages_size_limit(package) ≤ drivers_size_limit(driver) //The size of packaage should not greater than driver's capacity&#10;    then&#10;      @act5 drivers_size_limit(driver) ≔ drivers_size_limit(driver) − packages_size_limit(package) //Reduce the driver's capacity&#10;  end&#10;  event cancelPendingPackage extends cancelPendingPackage&#10;  where&#10;  @grd5 {package} ◁ packages_drivers ≠ ∅ // Make sure the package has driver assigned.&#10;  then&#10;  @act5 drivers_size_limit(packages_drivers(package)) ≔ drivers_size_limit(packages_drivers(package)) + packages_size_limit(package) // Restore the driver's capacity&#10;  end&#10;  event changePackageStatusToDelivered extends changePackageStatusToDelivered&#10;  then&#10;  @act2 drivers_size_limit(driver) ≔ drivers_size_limit(driver) + packages_size_limit(package) // Restore the driver's capacity&#10;  end&#10;&#10;  event addAdmin extends addAdmin&#10;  end&#10;  event addVendor extends addVendor&#10;  end&#10;  event viewJobList extends viewJobList&#10;  end&#10;  event viewDeliveredPackageList extends viewDeliveredPackageList&#10;  end&#10;  event viewAllocatedJobs extends viewAllocatedJobs&#10;  end&#10;  event changePackageStatusToIn_progress extends changePackageStatusToIn_progress&#10;  end&#10;  event sendMessageToDriver extends sendMessageToDriver&#10;  end&#10;end&#10;" version="5">
+    <org.eventb.core.refinesMachine name="_wI5MUG4hEeyXKLQQofVSyA" org.eventb.core.target="Machine1_TransportCon"/>
+    <org.eventb.core.seesContext name="_s7GaoG4hEeyXKLQQofVSyA" org.eventb.core.target="Refine_C1_TransportCon"/>
+    <org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="INITIALISATION">
+        <org.eventb.core.action name="_1MdWYG4tEeyXKLQQofVSyA" org.eventb.core.assignment="packages_size_limit ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="act12"/>
+        <org.eventb.core.action name="_1Md9cG4tEeyXKLQQofVSyA" org.eventb.core.assignment="drivers_size_limit ≔ ∅" org.eventb.core.generated="false" org.eventb.core.label="act13"/>
+    </org.eventb.core.event>
+    <org.eventb.core.variable name="_7mdpkG4mEeyXKLQQofVSyA" org.eventb.core.generated="false" org.eventb.core.identifier="admins"/>
+    <org.eventb.core.variable name="_7meQoG4mEeyXKLQQofVSyA" org.eventb.core.generated="false" org.eventb.core.identifier="vendors"/>
+    <org.eventb.core.variable name="_7mfewG4mEeyXKLQQofVSyA" org.eventb.core.generated="false" org.eventb.core.identifier="drivers"/>
+    <org.eventb.core.variable name="_7mgF0G4mEeyXKLQQofVSyA" org.eventb.core.generated="false" org.eventb.core.identifier="packages"/>
+    <org.eventb.core.variable name="_7mhT8G4mEeyXKLQQofVSyA" org.eventb.core.generated="false" org.eventb.core.identifier="messages"/>
+    <org.eventb.core.variable name="_7mh7AG4mEeyXKLQQofVSyA" org.eventb.core.generated="false" org.eventb.core.identifier="packages_own_status"/>
+    <org.eventb.core.variable name="_7miiEG4mEeyXKLQQofVSyA" org.eventb.core.generated="false" org.eventb.core.identifier="packages_vendors"/>
+    <org.eventb.core.variable name="_7mjJIG4mEeyXKLQQofVSyA" org.eventb.core.generated="false" org.eventb.core.identifier="packages_drivers"/>
+    <org.eventb.core.variable name="_7mkXQG4mEeyXKLQQofVSyA" org.eventb.core.generated="false" org.eventb.core.identifier="messages_sent"/>
+    <org.eventb.core.event name="_hSN1gG4tEeyXKLQQofVSyA" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="addPackage">
+        <org.eventb.core.refinesEvent name="_hSOckG4tEeyXKLQQofVSyA" org.eventb.core.target="addPackage"/>
+        <org.eventb.core.parameter name="_hSPDoG4tEeyXKLQQofVSyA" org.eventb.core.generated="false" org.eventb.core.identifier="p_size"/>
+        <org.eventb.core.guard name="_hSPqsG4tEeyXKLQQofVSyA" org.eventb.core.comment="Package size should be positive number" org.eventb.core.generated="false" org.eventb.core.label="grd4" org.eventb.core.predicate="p_size ∈ ℕ1"/>
+        <org.eventb.core.guard name="_1MLv8G41EeydAMAA-IqdHw" org.eventb.core.comment="Package size should not greater than vehicle max capacity" org.eventb.core.generated="false" org.eventb.core.label="grd5" org.eventb.core.predicate="p_size ≤ vehicle_capacity_max"/>
+        <org.eventb.core.action name="_nmET4G_HEeyQzPsvreHoQw" org.eventb.core.assignment="packages_size_limit(package) ≔  p_size" org.eventb.core.comment="Add the relationship between package and p_size" org.eventb.core.generated="false" org.eventb.core.label="act3"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_jMuLoG4zEeydAMAA-IqdHw" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="addDriver">
+        <org.eventb.core.refinesEvent name="_jMvZwG4zEeydAMAA-IqdHw" org.eventb.core.target="addDriver"/>
+        <org.eventb.core.parameter name="_jMwA0G4zEeydAMAA-IqdHw" org.eventb.core.generated="false" org.eventb.core.identifier="d_size"/>
+        <org.eventb.core.guard name="_hSUjMG4tEeyXKLQQofVSyA" org.eventb.core.comment="Drivers' vehicle will choose one from a set of all allowed truck type in UK. And they all have different capacity." org.eventb.core.generated="false" org.eventb.core.label="grd6" org.eventb.core.predicate="d_size ∈  {4, 8, 18, 26, 32, 38, 40, 41, 44}"/>
+        <org.eventb.core.action name="_jMydEG4zEeydAMAA-IqdHw" org.eventb.core.assignment="drivers_size_limit(driver) ≔  d_size" org.eventb.core.comment="Add the relationship between driver and d_size" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_hSTVEG4tEeyXKLQQofVSyA" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="assignPackage">
+        <org.eventb.core.refinesEvent name="_hST8IG4tEeyXKLQQofVSyA" org.eventb.core.target="assignPackage"/>
+        <org.eventb.core.action name="_zvM4wG4uEeyXKLQQofVSyA" org.eventb.core.assignment="drivers_size_limit(driver) ≔ drivers_size_limit(driver) − packages_size_limit(package)" org.eventb.core.comment="Reduce the driver's capacity" org.eventb.core.generated="false" org.eventb.core.label="act5"/>
+        <org.eventb.core.guard name="_DstdIHCGEeyQ3KcTnFfU2A" org.eventb.core.comment="The size of packaage should not greater than driver's capacity" org.eventb.core.generated="false" org.eventb.core.label="grd7" org.eventb.core.predicate="packages_size_limit(package) ≤ drivers_size_limit(driver)"/>
+    </org.eventb.core.event>
+    <org.eventb.core.invariant name="_zvPVAG4uEeyXKLQQofVSyA" org.eventb.core.comment="Define packages size. Every packages_size can't have many packages" org.eventb.core.generated="false" org.eventb.core.label="inv12" org.eventb.core.predicate="packages_size_limit ∈ packages → ℕ1"/>
+    <org.eventb.core.invariant name="_zvP8EG4uEeyXKLQQofVSyA" org.eventb.core.comment="Define drivers size." org.eventb.core.generated="false" org.eventb.core.label="inv13" org.eventb.core.predicate="drivers_size_limit ∈ drivers → ℕ"/>
+    <org.eventb.core.variable name="_EEfFIG4vEeydAMAA-IqdHw" org.eventb.core.generated="false" org.eventb.core.identifier="packages_size_limit"/>
+    <org.eventb.core.variable name="_EEfsMG4vEeydAMAA-IqdHw" org.eventb.core.generated="false" org.eventb.core.identifier="drivers_size_limit"/>
+    <org.eventb.core.event name="_GmeKoG44Eey6OKWlH8679w" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="cancelPendingPackage">
+        <org.eventb.core.refinesEvent name="_GmfYwG44Eey6OKWlH8679w" org.eventb.core.target="cancelPendingPackage"/>
+        <org.eventb.core.guard name="_brib8HAREeysvat7KvEfcw" org.eventb.core.comment="Make sure the package has driver assigned." org.eventb.core.generated="false" org.eventb.core.label="grd5" org.eventb.core.predicate="{package} ◁ packages_drivers ≠ ∅"/>
+        <org.eventb.core.action name="_mRo08HAyEeyA04Ev76YMKw" org.eventb.core.assignment="drivers_size_limit(packages_drivers(package)) ≔ drivers_size_limit(packages_drivers(package)) + packages_size_limit(package)" org.eventb.core.comment="Restore the driver's capacity" org.eventb.core.generated="false" org.eventb.core.label="act5"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="__hB8gG44Eey6OKWlH8679w" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="changePackageStatusToDelivered">
+        <org.eventb.core.refinesEvent name="__hDKoG44Eey6OKWlH8679w" org.eventb.core.target="changePackageStatusToDelivered"/>
+        <org.eventb.core.action name="__hDKoW44Eey6OKWlH8679w" org.eventb.core.assignment="drivers_size_limit(driver) ≔ drivers_size_limit(driver) + packages_size_limit(package)" org.eventb.core.comment="Restore the driver's capacity" org.eventb.core.generated="false" org.eventb.core.label="act2"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_E7haMG6EEeywTL4qFme5gA" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="addAdmin">
+        <org.eventb.core.refinesEvent name="_E7iBQG6EEeywTL4qFme5gA" org.eventb.core.target="addAdmin"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_O6YQAG6EEeywTL4qFme5gA" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="addVendor">
+        <org.eventb.core.refinesEvent name="_O6Y3EG6EEeywTL4qFme5gA" org.eventb.core.target="addVendor"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_O6Y3EW6EEeywTL4qFme5gA" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="viewJobList">
+        <org.eventb.core.refinesEvent name="_O6ZeIG6EEeywTL4qFme5gA" org.eventb.core.target="viewJobList"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_O6ZeIW6EEeywTL4qFme5gA" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="viewDeliveredPackageList">
+        <org.eventb.core.refinesEvent name="_O6aFMG6EEeywTL4qFme5gA" org.eventb.core.target="viewDeliveredPackageList"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_O6aFMW6EEeywTL4qFme5gA" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="viewAllocatedJobs">
+        <org.eventb.core.refinesEvent name="_O6asQG6EEeywTL4qFme5gA" org.eventb.core.target="viewAllocatedJobs"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_O6asQW6EEeywTL4qFme5gA" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="changePackageStatusToIn_progress">
+        <org.eventb.core.refinesEvent name="_O6bTUG6EEeywTL4qFme5gA" org.eventb.core.target="changePackageStatusToIn_progress"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="_ed1ZoHCvEeyck_gRyEwe3Q" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.generated="false" org.eventb.core.label="sendMessageToDriver">
+        <org.eventb.core.refinesEvent name="_ed2AsHCvEeyck_gRyEwe3Q" org.eventb.core.target="sendMessageToDriver"/>
+    </org.eventb.core.event>
+</org.eventb.core.machineFile>

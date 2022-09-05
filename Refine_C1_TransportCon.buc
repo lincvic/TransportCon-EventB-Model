@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" org.eventb.core.generated="false" org.eventb.texttools.text_lastmodified="1641604322927" org.eventb.texttools.text_representation="context Refine_C1_TransportCon extends Context_TransportCon&#10;sets vehicle_capacity // The capacity of the vehicle used by driver&#10;constants vehicle_capacity_max //The max capacity of all type of the vehicle driver could use. Unit is ton.&#10;axioms&#10;@axm1 vehicle_capacity_max = 44 //44T is the max cap of a truck allowed in UK&#10;end&#10;" version="3">
+    <org.eventb.core.extendsContext name="_k108oG4hEeyXKLQQofVSyA" org.eventb.core.target="Context_TransportCon"/>
+    <org.eventb.core.carrierSet name="_JbdKsG-sEeymQpiTdNsf0Q" org.eventb.core.comment="The capacity of the vehicle used by driver" org.eventb.core.generated="false" org.eventb.core.identifier="vehicle_capacity"/>
+    <org.eventb.core.constant name="_IuEX4G-6EeymQpiTdNsf0Q" org.eventb.core.comment="The max capacity of all type of the vehicle driver could use. Unit is ton." org.eventb.core.generated="false" org.eventb.core.identifier="vehicle_capacity_max"/>
+    <org.eventb.core.axiom name="_44FY0G_IEeyQzPsvreHoQw" org.eventb.core.comment="44T is the max cap of a truck allowed in UK" org.eventb.core.generated="false" org.eventb.core.label="axm1" org.eventb.core.predicate="vehicle_capacity_max = 44"/>
+</org.eventb.core.contextFile>

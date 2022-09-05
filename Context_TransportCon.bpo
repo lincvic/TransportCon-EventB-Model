@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="0">
+    <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poIdentifier name="MESSAGE" org.eventb.core.type="ℙ(MESSAGE)"/>
+        <org.eventb.core.poIdentifier name="SYS_ADMIN" org.eventb.core.type="ℙ(SYS_ADMIN)"/>
+        <org.eventb.core.poIdentifier name="PACKAGE" org.eventb.core.type="ℙ(PACKAGE)"/>
+        <org.eventb.core.poIdentifier name="package_status" org.eventb.core.type="ℙ(package_status)"/>
+        <org.eventb.core.poIdentifier name="USER" org.eventb.core.type="ℙ(USER)"/>
+        <org.eventb.core.poIdentifier name="sys_admin" org.eventb.core.type="SYS_ADMIN"/>
+        <org.eventb.core.poIdentifier name="delivered" org.eventb.core.type="package_status"/>
+        <org.eventb.core.poIdentifier name="in_progress" org.eventb.core.type="package_status"/>
+        <org.eventb.core.poIdentifier name="pending" org.eventb.core.type="package_status"/>
+    </org.eventb.core.poPredicateSet>
+    <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/TransportCon_CW2/Context_TransportCon.bpo|org.eventb.core.poFile#Context_TransportCon|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+        <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="partition(package_status,{pending},{in_progress},{delivered})" org.eventb.core.source="/TransportCon_CW2/Context_TransportCon.buc|org.eventb.core.contextFile#Context_TransportCon|org.eventb.core.axiom#_4xtU8G1gEeyKIe3KksMd0g"/>
+        <org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="partition(SYS_ADMIN,{sys_admin})" org.eventb.core.source="/TransportCon_CW2/Context_TransportCon.buc|org.eventb.core.contextFile#Context_TransportCon|org.eventb.core.axiom#_Z_HMsW8cEeyH0KS2Ks-urw"/>
+    </org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" org.eventb.core.generated="false" org.eventb.texttools.text_lastmodified="1641564896519" org.eventb.texttools.text_representation="context Context_TransportCon&#10;&#10;sets PACKAGE USER MESSAGE package_status SYS_ADMIN&#10;&#10;constants pending in_progress delivered sys_admin&#10;&#10;axioms&#10;  @axm1 partition(package_status, {pending}, {in_progress}, {delivered})&#10;  @axm2 partition(SYS_ADMIN, {sys_admin})&#10;end&#10;" version="3">
+    <org.eventb.core.carrierSet name="_4xmAMG1gEeyKIe3KksMd0g" org.eventb.core.generated="false" org.eventb.core.identifier="PACKAGE"/>
+    <org.eventb.core.carrierSet name="_4xoccG1gEeyKIe3KksMd0g" org.eventb.core.generated="false" org.eventb.core.identifier="USER"/>
+    <org.eventb.core.carrierSet name="_4xoccW1gEeyKIe3KksMd0g" org.eventb.core.generated="false" org.eventb.core.identifier="MESSAGE"/>
+    <org.eventb.core.constant name="_4xoccm1gEeyKIe3KksMd0g" org.eventb.core.generated="false" org.eventb.core.identifier="pending"/>
+    <org.eventb.core.constant name="_4xq4sW1gEeyKIe3KksMd0g" org.eventb.core.generated="false" org.eventb.core.identifier="in_progress"/>
+    <org.eventb.core.axiom name="_4xtU8G1gEeyKIe3KksMd0g" org.eventb.core.generated="false" org.eventb.core.label="axm1" org.eventb.core.predicate="partition(package_status, {pending}, {in_progress}, {delivered})"/>
+    <org.eventb.core.constant name="_HwjVAG1wEeyI392TAVS9gA" org.eventb.core.generated="false" org.eventb.core.identifier="delivered"/>
+    <org.eventb.core.carrierSet name="_oL4tAG1yEeykfLAPK35zHg" org.eventb.core.generated="false" org.eventb.core.identifier="package_status"/>
+    <org.eventb.core.carrierSet name="_Z_GloG8cEeyH0KS2Ks-urw" org.eventb.core.generated="false" org.eventb.core.identifier="SYS_ADMIN"/>
+    <org.eventb.core.constant name="_Z_HMsG8cEeyH0KS2Ks-urw" org.eventb.core.generated="false" org.eventb.core.identifier="sys_admin"/>
+    <org.eventb.core.axiom name="_Z_HMsW8cEeyH0KS2Ks-urw" org.eventb.core.generated="false" org.eventb.core.label="axm2" org.eventb.core.predicate="partition(SYS_ADMIN, {sys_admin})"/>
+</org.eventb.core.contextFile>
